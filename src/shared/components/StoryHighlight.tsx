@@ -1,0 +1,53 @@
+import { Container } from "./Container";
+import { SectionHeading } from "./SectionHeading";
+
+export type StoryItem = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+/**
+ * Shared "sharing / stories" block. Used on the home page today and on the
+ * About Us page later — that is why it lives in shared, not in 1-home.
+ */
+export function StoryHighlight({
+  eyebrow = "Sharing",
+  title,
+  description,
+  stories,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  stories: StoryItem[];
+}) {
+  return (
+    <section className="py-20">
+      <Container>
+        <SectionHeading
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
+          align="center"
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {stories.map((story) => (
+            <figure
+              key={story.name}
+              className="rounded-3xl border border-border bg-card p-7 shadow-soft"
+            >
+              <blockquote className="font-display text-lg leading-snug text-navy">
+                “{story.quote}”
+              </blockquote>
+              <figcaption className="mt-6 text-sm">
+                <span className="block font-semibold text-navy">{story.name}</span>
+                <span className="block text-muted-foreground">{story.role}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
