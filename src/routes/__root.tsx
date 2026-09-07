@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" },
       { title: "OpenBook Charity" },
       { name: "description", content: "Beri langsung, lihat dampaknya." },
       { name: "author", content: "OpenBook Charity" },
@@ -105,6 +105,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    const prevent = (event: Event) => event.preventDefault();
+    const preventPinch = (event: TouchEvent) => {
+      if (event.touches.length > 1) event.preventDefault();
+    };
+
+    document.addEventListener("gesturestart", prevent);
+    document.addEventListener("gesturechange", prevent);
+    document.addEventListener("gestureend", prevent);
+    document.addEventListener("touchmove", preventPinch, { passive: false });
+
+    return () => {
+      document.removeEventListener("gesturestart", prevent);
+      document.removeEventListener("gesturechange", prevent);
+      document.removeEventListener("gestureend", prevent);
+      document.removeEventListener("touchmove", preventPinch);
+    };
+  }, []);
+
   return (
     <html lang="id">
       <head>
