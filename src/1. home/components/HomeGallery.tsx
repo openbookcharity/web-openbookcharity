@@ -30,20 +30,22 @@ export function HomeGallery() {
           </div>
         </Container>
 
-        <CarouselContent className="mt-5 ml-0">
-          {m.home.gallerySlides.map((slide) => (
-            <CarouselItem
-              key={slide.caption}
-              className="basis-full pl-0 pr-0 sm:basis-[42%] sm:pr-3 lg:basis-[30%] last:pr-0"
-            >
-              <PhotoFrame
-                caption={slide.caption}
-                hint={slide.hint}
-                className="min-h-0 aspect-[16/10] rounded-none sm:rounded-xl lg:min-h-0"
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
+        <div className="lg:mx-auto lg:max-w-[84rem] lg:px-12">
+          <CarouselContent className="mt-5 ml-0">
+            {m.home.gallerySlides.map((slide) => (
+              <CarouselItem
+                key={slide.caption}
+                className="basis-full pl-0 pr-0 sm:basis-[42%] sm:pr-3 lg:basis-[30%] last:pr-0"
+              >
+                <PhotoFrame
+                  caption={slide.caption}
+                  hint={slide.hint}
+                  className="min-h-0 aspect-[16/10] rounded-none sm:rounded-xl lg:min-h-0"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </div>
 
         <Container>
           <div className="mt-3 flex gap-2 sm:hidden">
