@@ -1,7 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import { Container } from "@/shared/components/Container";
 import { SectionHeading } from "@/shared/components/SectionHeading";
-import { CtaButton } from "@/shared/components/CtaButton";
+import { ctaVariants } from "@/shared/components/CtaButton";
 import { useTransferOwnership } from "./useTransferOwnership";
 
 export function TransferOwnershipPanel() {
@@ -41,9 +41,9 @@ export function TransferOwnershipPanel() {
               placeholder="partner@organisation.org"
               className="mt-2 h-12 w-full rounded-xl border border-border bg-card px-4 text-sm outline-none focus:border-primary"
             />
-            <CtaButton className="mt-4 w-full">
+            <button type="submit" className={`${ctaVariants()} mt-4 w-full`}>
               {state === "pending" ? "Sending…" : "Start transfer"}
-            </CtaButton>
+            </button>
             {state === "done" ? (
               <p className="mt-3 text-sm text-mint">Transfer request sent for review.</p>
             ) : null}
