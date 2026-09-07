@@ -5,7 +5,7 @@ export function AboutVisionMission() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section className="border-t border-border py-8 sm:py-20">
       <Container>
         <p className="text-eyebrow text-accent">{m.about.direction}</p>
 

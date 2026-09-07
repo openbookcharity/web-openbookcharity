@@ -5,7 +5,7 @@ export function AboutBirth() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border bg-secondary/8 py-16 sm:py-20">
+    <section className="border-t border-border bg-secondary/8 py-8 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.about.birthEyebrow}</p>

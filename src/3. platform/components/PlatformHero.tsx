@@ -7,7 +7,7 @@ export function PlatformHero() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-hero-wash py-16 sm:py-20">
+    <section className="bg-hero-wash py-8 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
           <div>

@@ -16,7 +16,7 @@ export function ProjectsGrid() {
   const titles = Object.fromEntries(m.home.projects.map((project) => [project.id, project.title]));
 
   return (
-    <section className="bg-secondary/10 py-12">
+    <section className="bg-secondary/10 py-6 sm:py-12">
       <Container>
         <SectionHeading
           eyebrow={m.home.projectsEyebrow}

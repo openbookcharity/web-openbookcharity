@@ -6,7 +6,7 @@ export function WhyOpenBookHero() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-hero-wash py-16 sm:py-20">
+    <section className="bg-hero-wash py-8 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
           <div>

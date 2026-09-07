@@ -10,7 +10,7 @@ export function TransferOwnershipPanel() {
   const { m } = useI18n();
 
   return (
-    <section className="py-12">
+    <section className="py-6 sm:py-12">
       <Container>
         <div className="grid items-center gap-6 rounded-2xl border border-border bg-card p-5 shadow-soft lg:grid-cols-[1.2fr_1fr] lg:p-6">
           <div>

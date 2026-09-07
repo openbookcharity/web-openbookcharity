@@ -23,7 +23,7 @@ export function StoryHighlight({
   stories: StoryItem[];
 }) {
   return (
-    <section className="py-12">
+    <section className="py-6 sm:py-12">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}

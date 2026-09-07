@@ -22,8 +22,8 @@ export function SiteHeader() {
         scrolled && "border-border shadow-soft",
       )}
     >
-      <Container className="flex h-20 items-center justify-between gap-6">
-        <Logo />
+      <Container className="flex h-20 items-center justify-between gap-2 sm:gap-4 lg:gap-6">
+        <Logo hideTaglineOnMobile />
 
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
@@ -39,8 +39,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LanguageSwitch />
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-3 lg:flex">
+            <LanguageSwitch />
             <CtaButton to="/partner">{m.nav.raiseFunds}</CtaButton>
           </div>
           <button
@@ -68,6 +68,10 @@ export function SiteHeader() {
                 {m.nav[link.key]}
               </Link>
             ))}
+            <div className="mt-1 flex items-center justify-between rounded-xl px-3 py-3">
+              <span className="text-sm font-bold text-navy/80">{m.nav.language}</span>
+              <LanguageSwitch />
+            </div>
             <CtaButton to="/partner" className="mt-2">
               {m.nav.raiseFunds}
             </CtaButton>

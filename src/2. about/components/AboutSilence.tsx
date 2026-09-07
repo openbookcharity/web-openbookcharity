@@ -5,7 +5,7 @@ export function AboutSilence() {
   const { m } = useI18n();
 
   return (
-    <section className="pb-16 sm:pb-20">
+    <section className="pb-8 sm:pb-20">
       <Container>
         <figure className="max-w-3xl rounded-2xl bg-navy px-6 py-10 text-navy-foreground sm:px-10 sm:py-12">
           <p className="text-eyebrow text-navy-foreground/55">{m.about.silenceEyebrow}</p>

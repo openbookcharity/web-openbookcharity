@@ -6,7 +6,7 @@ export function HomeCtaBanner() {
   const { m } = useI18n();
 
   return (
-    <section className="pb-4 pt-6">
+    <section className="pb-4 pt-4 sm:pt-6">
       <Container>
         <div className="rounded-2xl bg-secondary px-6 py-8 text-center text-secondary-foreground shadow-float">
           <h2 className="mx-auto max-w-2xl text-2xl text-secondary-foreground sm:text-3xl">
