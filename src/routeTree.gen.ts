@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiToolsRouteImport } from './routes/ai-tools'
+import { Route as PartnerRouteImport } from './routes/partner'
+import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as WhyOpenbookRouteImport } from './routes/why-openbook'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiToolsRoute = AiToolsRouteImport.update({
+  id: '/ai-tools',
+  path: '/ai-tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnerRoute = PartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlatformRoute = PlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyOpenbookRoute = WhyOpenbookRouteImport.update({
+  id: '/why-openbook',
+  path: '/why-openbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-tools': typeof AiToolsRoute
+  '/partner': typeof PartnerRoute
+  '/platform': typeof PlatformRoute
+  '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-tools': typeof AiToolsRoute
+  '/partner': typeof PartnerRoute
+  '/platform': typeof PlatformRoute
+  '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-tools': typeof AiToolsRoute
+  '/partner': typeof PartnerRoute
+  '/platform': typeof PlatformRoute
+  '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/about' | '/ai-tools' | '/partner' | '/platform' | '/why-openbook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/ai-tools' | '/partner' | '/platform' | '/why-openbook'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-tools'
+    | '/partner'
+    | '/platform'
+    | '/why-openbook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AiToolsRoute: typeof AiToolsRoute
+  PartnerRoute: typeof PartnerRoute
+  PlatformRoute: typeof PlatformRoute
+  WhyOpenbookRoute: typeof WhyOpenbookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-tools': {
+      id: '/ai-tools'
+      path: '/ai-tools'
+      fullPath: '/ai-tools'
+      preLoaderRoute: typeof AiToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partner': {
+      id: '/partner'
+      path: '/partner'
+      fullPath: '/partner'
+      preLoaderRoute: typeof PartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/platform': {
+      id: '/platform'
+      path: '/platform'
+      fullPath: '/platform'
+      preLoaderRoute: typeof PlatformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-openbook': {
+      id: '/why-openbook'
+      path: '/why-openbook'
+      fullPath: '/why-openbook'
+      preLoaderRoute: typeof WhyOpenbookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AiToolsRoute: AiToolsRoute,
+  PartnerRoute: PartnerRoute,
+  PlatformRoute: PlatformRoute,
+  WhyOpenbookRoute: WhyOpenbookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
