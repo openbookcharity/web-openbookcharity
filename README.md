@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Shared Templates Hub
+
+tolong buat kan template kurang lebih sama seperti ini dengan struktur folder > 1. home , di dalam home harus ada seperti gambar ke dua, untuk yang sharing misalnya nanti akan di pakai di halaman about us, code nya jangan di tarok di 1. home tarok sebagai shared
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d6beb7d1-f0b5-4437-aaa5-2766e4b92c45).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
