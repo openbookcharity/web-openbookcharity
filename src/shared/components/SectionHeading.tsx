@@ -7,11 +7,11 @@ export function SectionHeading({
   align = "left",
   className,
 }: {
-  eyebrow?: string;
+  eyebrow?: string | undefined;
   title: string;
-  description?: string;
+  description?: string | undefined;
   align?: "left" | "center";
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <div
