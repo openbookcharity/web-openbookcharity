@@ -3,20 +3,20 @@ import type { StoryItem } from "@/shared/components/StoryHighlight";
 export const SHARED_STORIES: StoryItem[] = [
   {
     quote:
-      "I saw the video the same week my gift landed. That has never happened with any other charity.",
+      "Saya melihat videonya di minggu yang sama donasi saya sampai. Itu belum pernah terjadi di lembaga lain.",
     name: "Dewi Ananta",
-    role: "Monthly donor, Jakarta",
+    role: "Donatur bulanan, Jakarta",
   },
   {
     quote:
-      "Our small field team can report impact in minutes instead of writing quarterly PDFs nobody reads.",
-    name: "Peter Mwangi",
-    role: "Program lead, Nairobi",
+      "Tim lapangan kami yang kecil bisa melaporkan dampak dalam hitungan menit, bukan laporan panjang yang tidak dibaca siapa pun.",
+    name: "Andi Rahman",
+    role: "Ketua program, Makassar",
   },
   {
     quote:
-      "Transparency stopped being a promise and became something our board can actually audit.",
-    name: "Hannah Rivera",
-    role: "Foundation partner",
+      "Keterbukaan bukan janji lagi. Dewan kami bisa melihat sendiri ke mana dananya pergi.",
+    name: "Siti Rahma",
+    role: "Mitra yayasan, Bandung",
   },
 ];

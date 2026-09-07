@@ -9,10 +9,10 @@ export type StoryItem = {
 
 /**
  * Shared "sharing / stories" block. Used on the home page today and on the
- * About Us page later — that is why it lives in shared, not in 1-home.
+ * About Us page — that is why it lives in shared, not in `1. home`.
  */
 export function StoryHighlight({
-  eyebrow = "Sharing",
+  eyebrow = "Cerita",
   title,
   description,
   stories,
@@ -23,7 +23,7 @@ export function StoryHighlight({
   stories: StoryItem[];
 }) {
   return (
-    <section className="py-20">
+    <section className="py-12">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
@@ -31,16 +31,16 @@ export function StoryHighlight({
           description={description}
           align="center"
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-3 md:grid-cols-3">
           {stories.map((story) => (
             <figure
               key={story.name}
-              className="rounded-3xl border border-border bg-card p-7 shadow-soft"
+              className="rounded-2xl border border-border bg-card p-4 shadow-soft"
             >
-              <blockquote className="font-display text-lg leading-snug text-navy">
+              <blockquote className="font-display text-base leading-snug text-navy">
                 “{story.quote}”
               </blockquote>
-              <figcaption className="mt-6 text-sm">
+              <figcaption className="mt-4 text-sm">
                 <span className="block font-semibold text-navy">{story.name}</span>
                 <span className="block text-muted-foreground">{story.role}</span>
               </figcaption>

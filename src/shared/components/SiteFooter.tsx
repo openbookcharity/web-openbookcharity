@@ -1,21 +1,38 @@
 import { Link } from "@tanstack/react-router";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
-import { FOOTER_LINKS } from "@/shared/config/navigation";
+import { useI18n } from "@/shared/i18n/LanguageProvider";
 
 export function SiteFooter() {
+  const { m } = useI18n();
+  const groups = [
+    {
+      title: m.footer.platform,
+      links: [
+        { label: m.footer.overview, to: "/platform" },
+        { label: m.nav.why, to: "/why-openbook" },
+      ],
+    },
+    {
+      title: m.footer.org,
+      links: [
+        { label: m.nav.about, to: "/about" },
+        { label: m.nav.raiseFunds, to: "/partner" },
+      ],
+    },
+  ];
+
   return (
     <footer className="mt-24 bg-navy py-16 text-navy-foreground">
       <Container className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo tone="light" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
-            Transparent giving: every donation is tied to a real project and every project
-            reports back with video proof.
+            {m.footer.blurb}
           </p>
         </div>
 
-        {FOOTER_LINKS.map((group) => (
+        {groups.map((group) => (
           <div key={group.title}>
             <p className="text-eyebrow text-navy-foreground/60">{group.title}</p>
             <ul className="mt-4 space-y-3">
@@ -23,7 +40,7 @@ export function SiteFooter() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-navy-foreground/85 transition-colors hover:text-primary"
+                    className="text-sm text-navy-foreground/85 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -36,7 +53,7 @@ export function SiteFooter() {
 
       <Container className="mt-12 border-t border-navy-foreground/15 pt-6">
         <p className="text-xs text-navy-foreground/60">
-          © {new Date().getFullYear()} OpenBook Charity. All rights reserved.
+          © {new Date().getFullYear()} OpenBook Charity. {m.footer.copyright}
         </p>
       </Container>
     </footer>

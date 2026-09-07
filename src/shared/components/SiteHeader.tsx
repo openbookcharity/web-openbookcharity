@@ -4,13 +4,16 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { Container } from "./Container";
 import { CtaButton } from "./CtaButton";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { useScrolled } from "@/shared/hooks/useScrolled";
 import { NAV_LINKS } from "@/shared/config/navigation";
+import { useI18n } from "@/shared/i18n/LanguageProvider";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const scrolled = useScrolled();
   const [open, setOpen] = useState(false);
+  const { m } = useI18n();
 
   return (
     <header
@@ -27,26 +30,28 @@ export function SiteHeader() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm font-medium text-navy/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
+              activeOptions={{ exact: true }}
+              className="relative pb-1 text-sm font-bold text-navy/70 transition-colors hover:text-secondary data-[status=active]:text-secondary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
             >
-              {link.label}
+              {m.nav[link.key]}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <CtaButton to="/partner">Partner with Us</CtaButton>
+        <div className="flex items-center gap-3">
+          <LanguageSwitch />
+          <div className="hidden lg:block">
+            <CtaButton to="/partner">{m.nav.raiseFunds}</CtaButton>
+          </div>
+          <button
+            type="button"
+            aria-label={m.nav.openMenu}
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex size-10 items-center justify-center rounded-full border border-border text-navy lg:hidden"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
-
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex size-10 items-center justify-center rounded-full border border-border text-navy lg:hidden"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
       </Container>
 
       {open ? (
@@ -56,14 +61,15 @@ export function SiteHeader() {
               <Link
                 key={link.to}
                 to={link.to}
+                activeOptions={{ exact: true }}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-sm font-medium text-navy hover:bg-muted"
+                className="rounded-xl px-3 py-3 text-sm font-bold text-navy/80 transition-colors hover:bg-muted hover:text-secondary data-[status=active]:bg-muted data-[status=active]:text-secondary"
               >
-                {link.label}
+                {m.nav[link.key]}
               </Link>
             ))}
             <CtaButton to="/partner" className="mt-2">
-              Partner with Us
+              {m.nav.raiseFunds}
             </CtaButton>
           </Container>
         </div>

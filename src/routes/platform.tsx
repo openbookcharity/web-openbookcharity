@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageLayout } from "@/shared/components/PageLayout";
-import { Container } from "@/shared/components/Container";
-import { SectionHeading } from "@/shared/components/SectionHeading";
+import { PlatformPage } from "@/3. platform/pages/PlatformPage";
 
-const title = "Platform Overview — OpenBook Charity";
+const title = "Platform | OpenBook Charity";
 const description =
-  "Project-based fundraising, video impact updates, disbursement tracking, and partner health scores in one platform.";
+  "Cara kerja OpenBook Charity: buat program, terima donasi, catat penyaluran, unggah bukti, dan biarkan donatur melihat dana sampai.";
 
 export const Route = createFileRoute("/platform")({
   head: () => ({
@@ -18,19 +16,3 @@ export const Route = createFileRoute("/platform")({
   }),
   component: PlatformPage,
 });
-
-function PlatformPage() {
-  return (
-    <PageLayout>
-      <section className="bg-hero-wash py-20">
-        <Container>
-          <SectionHeading
-            eyebrow="Platform"
-            title="One place to raise, spend, and prove"
-            description="Set up a costed project, collect gifts, record disbursements, and publish the video proof donors are waiting for."
-          />
-        </Container>
-      </section>
-    </PageLayout>
-  );
-}

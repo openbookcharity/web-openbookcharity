@@ -8,9 +8,9 @@ export const ctaVariants = cva(
   {
     variants: {
       variant: {
-        solid: "bg-primary text-primary-foreground shadow-soft hover:-translate-y-0.5",
+        solid: "bg-accent text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:bg-accent/90",
         outline: "border-2 border-navy text-navy hover:bg-navy hover:text-navy-foreground",
-        ghost: "text-navy hover:text-primary",
+        ghost: "text-navy hover:text-accent",
         light:
           "bg-navy-foreground text-navy shadow-soft hover:-translate-y-0.5",
       },

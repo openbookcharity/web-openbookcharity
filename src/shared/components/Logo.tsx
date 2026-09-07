@@ -1,43 +1,30 @@
 import { Link } from "@tanstack/react-router";
+import { useI18n } from "@/shared/i18n/LanguageProvider";
 
 export function Logo({ tone = "navy" }: { tone?: "navy" | "light" }) {
-  const rays = Array.from({ length: 12 });
+  const { m } = useI18n();
 
   return (
-    <Link to="/" className="inline-flex items-center gap-3">
-      <span className="relative block size-9">
-        {rays.map((_, i) => (
-          <span
-            key={i}
-            className="absolute left-1/2 top-1/2 block h-3.5 w-1.5 rounded-full"
-            style={{
-              transform: `rotate(${i * 30}deg) translateY(-11px)`,
-              transformOrigin: "center top",
-              backgroundColor: [
-                "var(--primary)",
-                "var(--chart-4)",
-                "var(--mint)",
-                "var(--navy)",
-              ][i % 4],
-              opacity: 0.9,
-            }}
-          />
-        ))}
-      </span>
-      <span className="leading-tight">
+    <Link to="/" className="inline-flex items-center gap-1.5">
+      <img
+        src="/OBS.png"
+        alt="OpenBook Charity"
+        className="h-14 w-auto shrink-0 object-contain"
+      />
+      <span className="-ml-1 leading-tight">
         <span
-          className={`block font-display text-xl font-semibold ${
+          className={`block font-display text-lg font-semibold tracking-tight sm:text-xl ${
             tone === "light" ? "text-navy-foreground" : "text-navy"
           }`}
         >
-          OpenBook
+          OpenBook Charity
         </span>
         <span
           className={`block text-[10px] tracking-wide ${
             tone === "light" ? "text-navy-foreground/70" : "text-muted-foreground"
           }`}
         >
-          See the difference you make
+          {m.logo.tagline}
         </span>
       </span>
     </Link>

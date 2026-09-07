@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageLayout } from "@/shared/components/PageLayout";
-import { Container } from "@/shared/components/Container";
-import { SectionHeading } from "@/shared/components/SectionHeading";
+import { WhyOpenBookPage } from "@/4. why-openbook/pages/WhyOpenBookPage";
 
-const title = "Why OpenBook — OpenBook Charity";
+const title = "Why Us | OpenBook Charity";
 const description =
-  "Why open books, project-level accountability, and video proof beat annual reports nobody reads.";
+  "Kenapa lembaga dan donatur memakai OpenBook Charity: catatan terbuka per program, laporan dampak dalam hitungan hari, dan jejak dana yang bisa dicek.";
 
 export const Route = createFileRoute("/why-openbook")({
   head: () => ({
@@ -16,21 +14,5 @@ export const Route = createFileRoute("/why-openbook")({
       { property: "og:description", content: description },
     ],
   }),
-  component: WhyPage,
+  component: WhyOpenBookPage,
 });
-
-function WhyPage() {
-  return (
-    <PageLayout>
-      <section className="bg-hero-wash py-20">
-        <Container>
-          <SectionHeading
-            eyebrow="Why OpenBook"
-            title="Trust you can check, not just believe"
-            description="Donors stay when they can see what changed. Partners grow when their track record is visible."
-          />
-        </Container>
-      </section>
-    </PageLayout>
-  );
-}

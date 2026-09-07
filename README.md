@@ -1,8 +1,22 @@
-# Shared Templates Hub
-
-tolong buat kan template kurang lebih sama seperti ini dengan struktur folder > 1. home , di dalam home harus ada seperti gambar ke dua, untuk yang sharing misalnya nanti akan di pakai di halaman about us, code nya jangan di tarok di 1. home tarok sebagai shared
+# OpenBook Charity
 
 This project was built with [Lovable](https://lovable.dev).
+
+## Source layout
+
+Each page lives in a numbered folder under `src/`. Shared UI (header, footer, layout, stories) stays in `src/shared/` — never inside a page folder. Route files in `src/routes/` stay thin wrappers for TanStack Start file-based routing.
+
+```
+src/
+  1. home/           Home page and its sections, hooks, settings
+  2. about/          About page
+  3. platform/       Platform page
+  4. why-openbook/   Why OpenBook page
+  5. partner/        Partner page
+  shared/            Cross-page layout, nav, StoryHighlight
+  routes/            File-based route definitions
+  components/ui/     shadcn primitives
+```
 
 ## Build with Lovable
 

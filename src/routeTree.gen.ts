@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as AiToolsRouteImport } from './routes/ai-tools'
 import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as WhyOpenbookRouteImport } from './routes/why-openbook'
@@ -24,11 +23,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiToolsRoute = AiToolsRouteImport.update({
-  id: '/ai-tools',
-  path: '/ai-tools',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnerRoute = PartnerRouteImport.update({
@@ -50,7 +44,6 @@ const WhyOpenbookRoute = WhyOpenbookRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-tools': typeof AiToolsRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
@@ -58,7 +51,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-tools': typeof AiToolsRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
@@ -67,31 +59,21 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-tools': typeof AiToolsRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/about' | '/ai-tools' | '/partner' | '/platform' | '/why-openbook'
+  fullPaths: '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/ai-tools' | '/partner' | '/platform' | '/why-openbook'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/ai-tools'
-    | '/partner'
-    | '/platform'
-    | '/why-openbook'
+  to: '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
+  id: '__root__' | '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AiToolsRoute: typeof AiToolsRoute
   PartnerRoute: typeof PartnerRoute
   PlatformRoute: typeof PlatformRoute
   WhyOpenbookRoute: typeof WhyOpenbookRoute
@@ -111,13 +93,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-tools': {
-      id: '/ai-tools'
-      path: '/ai-tools'
-      fullPath: '/ai-tools'
-      preLoaderRoute: typeof AiToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partner': {
@@ -147,7 +122,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AiToolsRoute: AiToolsRoute,
   PartnerRoute: PartnerRoute,
   PlatformRoute: PlatformRoute,
   WhyOpenbookRoute: WhyOpenbookRoute,
