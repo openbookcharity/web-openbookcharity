@@ -14,7 +14,7 @@ export function PlatformScreens() {
 
   return (
     <section className="border-t border-border py-6 sm:py-12">
-      <Carousel opts={{ align: "start", loop: false }} className="w-full">
+      <Carousel opts={{ align: "start", loop: false }} className="w-full max-w-full overflow-x-clip">
         <Container>
           <div className="flex items-end justify-between gap-4">
             <div className="max-w-2xl">

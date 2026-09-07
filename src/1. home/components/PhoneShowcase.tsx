@@ -7,9 +7,9 @@ export function PhoneShowcase() {
   const copy = m.home.phone;
 
   return (
-    <div className="relative mx-auto w-full max-w-md">
+    <div className="relative mx-auto w-full max-w-md overflow-x-clip">
       <div className="absolute -left-6 top-24 hidden size-3 rounded-full bg-accent/50 lg:block" />
-      <div className="absolute -right-4 -top-4 z-20 rounded-2xl bg-navy px-5 py-4 text-navy-foreground shadow-float">
+      <div className="absolute right-0 top-0 z-20 rounded-2xl bg-navy px-5 py-4 text-navy-foreground shadow-float sm:-right-4 sm:-top-4">
         <p className="flex items-center gap-2 text-eyebrow text-navy-foreground/70">
           <span className="size-2 rounded-full bg-primary" /> {copy.reportScore}
         </p>
@@ -50,7 +50,7 @@ export function PhoneShowcase() {
         </div>
       </div>
 
-      <div className="absolute -bottom-6 -left-4 z-20 w-56 rounded-2xl bg-card p-4 shadow-float">
+      <div className="absolute bottom-0 left-0 z-20 w-52 rounded-2xl bg-card p-4 shadow-float sm:-bottom-6 sm:-left-4 sm:w-56">
         <p className="text-sm font-semibold text-navy">{copy.dimas}</p>
         <div className="mt-3 h-1.5 w-full rounded-full bg-muted">
           <div className="h-full w-[73%] rounded-full bg-accent" />

@@ -125,11 +125,11 @@ function RootShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <html lang="id">
+    <html lang="id" className="overflow-x-clip">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="overflow-x-clip">
         <LanguageProvider>{children}</LanguageProvider>
         <Scripts />
       </body>

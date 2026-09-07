@@ -22,7 +22,7 @@ export function SiteHeader() {
         scrolled && "border-border shadow-soft",
       )}
     >
-      <Container className="flex h-20 items-center justify-between gap-2 sm:gap-4 lg:gap-6">
+      <Container className="flex h-20 min-w-0 items-center justify-between gap-2 sm:gap-4 lg:gap-6">
         <Logo hideTaglineOnMobile />
 
         <nav className="hidden items-center gap-8 lg:flex">

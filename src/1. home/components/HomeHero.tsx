@@ -11,8 +11,8 @@ export function HomeHero() {
 
   return (
     <section className="bg-hero-wash pb-8 pt-8 sm:pb-16 sm:pt-14 lg:pb-24">
-      <Container className="grid items-center gap-10 md:grid-cols-[1.05fr_1fr] md:gap-12 lg:gap-16">
-        <div>
+      <Container className="grid min-w-0 items-center gap-10 md:grid-cols-[1.05fr_1fr] md:gap-12 lg:gap-16">
+        <div className="min-w-0">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-eyebrow text-accent-foreground">
             <Globe className="size-4" />
             {m.home.badge}
