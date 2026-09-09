@@ -6,20 +6,21 @@ const id = {
     about: "About Us",
     why: "Why Us",
     platform: "Platform",
+    community: "Community",
     raiseFunds: "Galang dana",
     openMenu: "Buka menu",
     language: "Bahasa",
   },
   footer: {
     blurb:
-      "Setiap pemberian terikat pada kegiatan nyata, dan setiap program lapor kembali dengan bukti video.",
+      "Donasi Anda dipakai untuk kegiatan yang nyata, dan Anda bisa melihat buktinya lewat video.",
     platform: "Platform",
     overview: "Ringkasan",
     org: "Lembaga",
     copyright: "Hak cipta dilindungi.",
   },
   logo: {
-    tagline: "Lihat perbedaan yang Anda buat",
+    tagline: "Lihat perbedaan yang Anda buat bersama kami",
   },
   common: {
     raiseFunds: "Galang dana",
@@ -27,6 +28,7 @@ const id = {
     seePrograms: "Lihat kegiatan",
     photoSoon: "Gambar sementara",
     screen: "Layar",
+    whatsapp: "Chat di WhatsApp",
   },
   home: {
     badge: "38 negara · 22.000+ program terbantu",
@@ -307,22 +309,37 @@ const id = {
       { caption: "Slide 3", hint: "Kegiatan yang bisa diikuti." },
       { caption: "Slide 4", hint: "Skor laporan di platform." },
     ],
-    audienceEyebrow: "Untuk siapa",
-    audienceTitle: "Dipakai yang memberi, dan yang menggalang.",
+    audienceEyebrow: "Alur bantuan",
+    audienceTitle: "Dari donatur, ke lembaga, sampai ke penerima.",
     audienceIntro:
-      "Platform ini berdiri di tengah. Donatur mendapat kepastian. Lembaga mendapat wadah yang dulu tidak ada: tempat bersuara, lapor cepat, dan menunjukkan kerja lapangan tanpa harus menunggu setahun.",
-    donorCaption: "Foto donatur",
-    donorHint: "Orang yang memberi, lalu melihat sendiri dananya sampai.",
-    donorEyebrow: "Untuk donatur",
-    donorTitle: "Lihat. Ikuti. Pastikan.",
-    donorBody:
-      "Setiap rupiah dari tangan yang tulus berhak bermuara pada penerima yang tepat. Di OpenBook Charity Anda tidak menebak. Program punya jejak, dari tangan yang memberi sampai orang yang menerima. Video dampak datang, bukan ditunggu berbulan lamanya.",
-    orgCaption: "Foto mitra",
-    orgHint: "Tim lapangan atau pengurus yang membuka catatannya.",
-    orgEyebrow: "Untuk lembaga",
-    orgTitle: "Rekam jejak yang menumbuhkan.",
-    orgBody:
-      "Mitra tumbuh ketika kerjanya terlihat. Siapkan program dengan biaya yang jelas, terima donasi, catat penyaluran, unggah bukti. Dewan dan donatur melihat sendiri ke mana dananya pergi. Itulah alasan 22.000 lebih program sudah dibantu lewat cara kerja ini.",
+      "Uang tidak hilang di tengah. Donatur memberi, lembaga mencatat, lalu bantuan sampai ke orang yang membutuhkan. Setiap langkah bisa dilihat.",
+    funnelPath: ["Donatur", "Lembaga", "Penerima bantuan"],
+    funnel: [
+      {
+        n: "01",
+        eyebrow: "Donatur",
+        title: "Anda memberi ke program yang jelas.",
+        body: "Pilih kegiatan, beri donasi, lalu lihat uang itu dipakai untuk apa. Tidak perlu menebak. Setelah dana sampai di lapangan, lembaga kirim video bukti penyerahan langsung ke penerima bantuan.",
+        caption: "Foto donatur",
+        hint: "Orang yang memberi, lalu melihat dananya sampai.",
+      },
+      {
+        n: "02",
+        eyebrow: "Lembaga",
+        title: "Lembaga terima donasi, lalu catat penyalurannya.",
+        body: "Donasi masuk ke program yang sudah ada biayanya. Lembaga catat uang masuk dan uang keluar, lalu unggah bukti penyerahan ke penerima. Donatur bisa melihat catatan yang sama.",
+        caption: "Foto lembaga",
+        hint: "Tim yang membuka catatan dana.",
+      },
+      {
+        n: "03",
+        eyebrow: "Penerima bantuan",
+        title: "Dana sampai ke yang membuat campaign.",
+        body: "Penerima bantuan yang membuat campaign. Donasi dari donatur, lewat lembaga, sampai ke tangan mereka. Donatur melihat video penyerahannya.",
+        caption: "Foto penerima",
+        hint: "Orang yang membuat campaign, lalu menerima dananya.",
+      },
+    ],
     storiesTitle: "Yang sudah memakai cara ini",
     storiesDescription:
       "Donatur dan mitra di Indonesia yang melihat sendiri bahwa catatannya memang bisa dicek.",
@@ -420,6 +437,54 @@ const id = {
     ctaBody:
       "Lembaga membuka program di sini. Donatur memilih kegiatan yang sedang berjalan di beranda.",
   },
+  community: {
+    eyebrow: "Community",
+    title: "Orang yang memberi, yang menggalang, dan yang dibantu, di satu catatan.",
+    description:
+      "Community OpenBook Charity adalah orang yang memilih berdonasi dengan catatan yang bisa dibuka. Bukan klub. Tempat melihat dana sampai ke yang membutuhkan.",
+    heroCaption: "Foto komunitas",
+    heroHint: "Donatur, mitra, dan penerima di satu catatan.",
+    rolesEyebrow: "Siapa saja",
+    rolesTitle: "Tiga pihak, satu buku yang sama.",
+    rolesIntro:
+      "Yang memberi melihat. Yang menggalang mencatat. Yang dibantu menerima. Angkanya tidak berbeda.",
+    roles: [
+      {
+        title: "Yang memberi",
+        body: "Pilih program, beri, lalu lihat dananya sampai lewat video. Tidak perlu menebak.",
+      },
+      {
+        title: "Yang menggalang",
+        body: "Buka kegiatan dengan biaya yang jelas, catat penyaluran, dan kirim bukti dari lapangan.",
+      },
+      {
+        title: "Yang dibantu",
+        body: "Bantuan sampai ke orang yang tepat, dan yang memberi bisa melihat buktinya.",
+      },
+    ],
+    waysEyebrow: "Cara ikut",
+    waysTitle: "Ikut dengan cara yang bisa dicek.",
+    waysIntro: "Tidak ada formulir rahasia. Pilih kegiatan, beri, lalu lihat laporannya.",
+    ways: [
+      {
+        n: "01",
+        title: "Lihat kegiatan yang berjalan",
+        body: "Setiap program punya tujuan, biaya, dan penerima yang tertulis dari awal.",
+      },
+      {
+        n: "02",
+        title: "Beri ke program yang jelas",
+        body: "Donasi masuk ke kegiatan itu, bukan ke dana umum yang kabur.",
+      },
+      {
+        n: "03",
+        title: "Lihat buktinya lewat video",
+        body: "Laporan datang dari lapangan, biasanya dalam hitungan hari, bukan setahun sekali.",
+      },
+    ],
+    ctaTitle: "Mulai dari kegiatan yang sedang berjalan.",
+    ctaBody: "Pilih program di beranda, atau bawa kegiatan lembaga Anda ke catatan yang sama.",
+  },
   partner: {
     eyebrow: "Galang dana",
     title: "Mulai program terbuka pertama Anda",
@@ -442,20 +507,21 @@ const en: typeof id = {
     about: "About Us",
     why: "Why Us",
     platform: "Platform",
+    community: "Community",
     raiseFunds: "Raise funds",
     openMenu: "Open menu",
     language: "Language",
   },
   footer: {
     blurb:
-      "Every gift is tied to a real program, and every program reports back with video proof.",
+      "Your donation goes to a real program, and you can see the proof in a video.",
     platform: "Platform",
     overview: "Overview",
     org: "Organisation",
     copyright: "All rights reserved.",
   },
   logo: {
-    tagline: "See the difference you make",
+    tagline: "See the difference you make with us",
   },
   common: {
     raiseFunds: "Raise funds",
@@ -463,6 +529,7 @@ const en: typeof id = {
     seePrograms: "See programs",
     photoSoon: "Photo coming soon",
     screen: "Screen",
+    whatsapp: "Chat on WhatsApp",
   },
   home: {
     badge: "38 countries · 22,000+ programs helped",
@@ -742,22 +809,37 @@ const en: typeof id = {
       { caption: "Slide 3", hint: "A program donors can follow." },
       { caption: "Slide 4", hint: "The report score on the platform." },
     ],
-    audienceEyebrow: "Who it is for",
-    audienceTitle: "Used by those who give, and those who raise.",
+    audienceEyebrow: "How help flows",
+    audienceTitle: "From the donor, to the organisation, to the person who is helped.",
     audienceIntro:
-      "The platform stands in the middle. Donors get certainty. Organisations get the space that used to be missing: a place to speak, report quickly, and show field work without waiting a year.",
-    donorCaption: "Donor photo",
-    donorHint: "Someone who gave, then saw the funds arrive.",
-    donorEyebrow: "For donors",
-    donorTitle: "See. Follow. Confirm.",
-    donorBody:
-      "Every rupiah from a sincere hand deserves to reach the right recipient. At OpenBook Charity you do not guess. Programs have a trail, from the giver to the person who receives. Impact videos arrive, not after months of waiting.",
-    orgCaption: "Partner photo",
-    orgHint: "A field team or board that opens its records.",
-    orgEyebrow: "For organisations",
-    orgTitle: "A track record that helps you grow.",
-    orgBody:
-      "Partners grow when their work is visible. Set up a program with clear costs, receive donations, record disbursements, upload proof. Boards and donors see for themselves where funds go. That is why more than 22,000 programs have already been helped this way.",
+      "The money does not get lost in the middle. Donors give, organisations record it, then help reaches the person who needs it. Every step can be seen.",
+    funnelPath: ["Donor", "Organisation", "Person helped"],
+    funnel: [
+      {
+        n: "01",
+        eyebrow: "Donor",
+        title: "You give to a clear program.",
+        body: "Choose an activity, give, then see what the money is used for. No guessing. After the funds reach the field, the organisation sends a video of the handover directly to the person who is helped.",
+        caption: "Donor photo",
+        hint: "Someone who gave, then saw the funds arrive.",
+      },
+      {
+        n: "02",
+        eyebrow: "Organisation",
+        title: "The organisation receives the donation, then records the payout.",
+        body: "The donation goes into a program that already has clear costs. The organisation records money in and money out, then uploads proof of the handover to the recipient. Donors can see the same record.",
+        caption: "Organisation photo",
+        hint: "The team that opens the fund records.",
+      },
+      {
+        n: "03",
+        eyebrow: "Person helped",
+        title: "Funds reach the person who created the campaign.",
+        body: "The recipient is the one who creates the campaign. Donations from donors, through the organisation, reach their hands. Donors see the handover on video.",
+        caption: "Recipient photo",
+        hint: "The person who created the campaign, then receives the funds.",
+      },
+    ],
     storiesTitle: "Those already working this way",
     storiesDescription:
       "Donors and partners in Indonesia who saw for themselves that the records can be checked.",
@@ -854,6 +936,55 @@ const en: typeof id = {
     ctaTitle: "Ready to work this way?",
     ctaBody:
       "Organisations open programs here. Donors choose a program that is already running on the home page.",
+  },
+  community: {
+    eyebrow: "Community",
+    title: "Givers, fundraisers, and recipients, on one shared record.",
+    description:
+      "The OpenBook Charity community is people who choose to give with records they can open. Not a club. A place to see funds reach those who need them.",
+    heroCaption: "Community photo",
+    heroHint: "Donors, partners, and recipients on one record.",
+    rolesEyebrow: "Who is here",
+    rolesTitle: "Three sides, one shared book.",
+    rolesIntro:
+      "Those who give see. Those who raise record. Those who are helped receive. The numbers are the same.",
+    roles: [
+      {
+        title: "Those who give",
+        body: "Choose a program, give, then see the funds arrive in a video. No guessing.",
+      },
+      {
+        title: "Those who raise funds",
+        body: "Open a program with clear costs, record disbursements, and send proof from the field.",
+      },
+      {
+        title: "Those who are helped",
+        body: "Help reaches the right person, and those who gave can see the proof.",
+      },
+    ],
+    waysEyebrow: "How to take part",
+    waysTitle: "Take part in a way you can check.",
+    waysIntro: "There is no hidden form. Choose a program, give, then see the report.",
+    ways: [
+      {
+        n: "01",
+        title: "See programs that are running",
+        body: "Every program has a purpose, costs, and recipients written from the start.",
+      },
+      {
+        n: "02",
+        title: "Give to a clear program",
+        body: "Your donation goes to that activity, not into a vague general fund.",
+      },
+      {
+        n: "03",
+        title: "See the proof in a video",
+        body: "Reports come from the field, usually in days, not once a year.",
+      },
+    ],
+    ctaTitle: "Start with a program that is already running.",
+    ctaBody:
+      "Choose a program on the home page, or bring your organisation's work onto the same record.",
   },
   partner: {
     eyebrow: "Raise funds",

@@ -17,13 +17,14 @@ export function SiteFooter() {
       title: m.footer.org,
       links: [
         { label: m.nav.about, to: "/about" },
+        { label: m.nav.community, to: "/community" },
         { label: m.nav.raiseFunds, to: "/partner" },
       ],
     },
   ];
 
   return (
-    <footer className="mt-10 bg-navy py-10 text-navy-foreground sm:mt-24 sm:py-16">
+    <footer className="mt-6 bg-navy py-10 text-navy-foreground sm:mt-24 sm:py-16">
       <Container className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo tone="light" />

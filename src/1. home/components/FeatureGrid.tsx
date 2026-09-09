@@ -10,14 +10,14 @@ export function FeatureGrid() {
   const { m } = useI18n();
 
   return (
-    <section className="py-6 sm:py-12">
+    <section className="py-4 sm:py-12">
       <Container>
         <SectionHeading
           eyebrow={m.home.featuresEyebrow}
           title={m.home.featuresTitle}
           description={m.home.featuresDescription}
         />
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="mt-4 grid gap-3 sm:mt-6 sm:grid-cols-2">
           {m.home.features.map((feature, index) => {
             const icon = HOME_SETTINGS.features[index]?.icon ?? "target";
             const Icon = ICONS[icon];

@@ -22,10 +22,10 @@ export function SiteHeader() {
         scrolled && "border-border shadow-soft",
       )}
     >
-      <Container className="flex h-20 min-w-0 items-center justify-between gap-2 sm:gap-4 lg:gap-6">
-        <Logo hideTaglineOnMobile />
+      <Container className="flex min-h-20 min-w-0 items-center justify-between gap-2 py-2 sm:gap-4 lg:gap-6">
+        <Logo />
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}

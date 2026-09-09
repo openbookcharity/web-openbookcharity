@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { LanguageProvider, useI18n } from "@/shared/i18n/LanguageProvider";
+import { WhatsAppButton } from "@/shared/components/WhatsAppButton";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -143,6 +144,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }

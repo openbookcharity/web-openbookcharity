@@ -45,4 +45,5 @@ export const WHY_SETTINGS = {
       body: "Skor langsung menunjukkan seberapa rajin mitra melaporkan pekerjaan yang sudah dibantu. Rekam jejak tidak bisa disembunyikan di balik ringkasan.",
     },
   ],
+  funnel: [{ tone: "light" }, { tone: "navy" }, { tone: "sand" }],
 } as const;

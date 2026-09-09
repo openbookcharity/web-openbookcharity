@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CommunityRouteImport } from './routes/community'
 import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as WhyOpenbookRouteImport } from './routes/why-openbook'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnerRoute = PartnerRouteImport.update({
@@ -44,6 +50,7 @@ const WhyOpenbookRoute = WhyOpenbookRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
@@ -59,21 +67,31 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
   '/partner': typeof PartnerRoute
   '/platform': typeof PlatformRoute
   '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
+  fullPaths:
+    '/' | '/about' | '/community' | '/partner' | '/platform' | '/why-openbook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
-  id: '__root__' | '/' | '/about' | '/partner' | '/platform' | '/why-openbook'
+  to: '/' | '/about' | '/community' | '/partner' | '/platform' | '/why-openbook'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/community'
+    | '/partner'
+    | '/platform'
+    | '/why-openbook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CommunityRoute: typeof CommunityRoute
   PartnerRoute: typeof PartnerRoute
   PlatformRoute: typeof PlatformRoute
   WhyOpenbookRoute: typeof WhyOpenbookRoute
@@ -93,6 +111,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partner': {
@@ -122,6 +147,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CommunityRoute: CommunityRoute,
   PartnerRoute: PartnerRoute,
   PlatformRoute: PlatformRoute,
   WhyOpenbookRoute: WhyOpenbookRoute,

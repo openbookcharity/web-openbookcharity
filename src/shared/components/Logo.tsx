@@ -2,13 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
 import { cn } from "@/lib/utils";
 
-export function Logo({
-  tone = "navy",
-  hideTaglineOnMobile = false,
-}: {
-  tone?: "navy" | "light";
-  hideTaglineOnMobile?: boolean;
-}) {
+export function Logo({ tone = "navy" }: { tone?: "navy" | "light" }) {
   const { m } = useI18n();
 
   return (
@@ -18,11 +12,10 @@ export function Logo({
         alt="OpenBook Charity"
         className="h-14 w-auto shrink-0 object-contain"
       />
-      <span className="-ml-1 leading-tight">
+      <span className="-ml-1 min-w-0 leading-tight">
         <span
           className={cn(
-            "block font-display text-lg font-semibold leading-tight tracking-tight sm:text-xl",
-            hideTaglineOnMobile && "whitespace-nowrap",
+            "block whitespace-nowrap font-display text-lg font-semibold leading-tight tracking-tight sm:text-xl",
             tone === "light" ? "text-navy-foreground" : "text-navy",
           )}
         >
@@ -30,8 +23,7 @@ export function Logo({
         </span>
         <span
           className={cn(
-            "block text-[10px] tracking-wide",
-            hideTaglineOnMobile ? "hidden lg:block" : "",
+            "mt-0.5 block whitespace-nowrap text-[11px] leading-snug sm:text-xs",
             tone === "light" ? "text-navy-foreground/70" : "text-muted-foreground",
           )}
         >

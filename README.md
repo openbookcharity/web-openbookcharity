@@ -13,6 +13,7 @@ src/
   3. platform/       Platform page
   4. why-openbook/   Why OpenBook page
   5. partner/        Partner page
+  6. community/      Community page
   shared/            Cross-page layout, nav, StoryHighlight
   routes/            File-based route definitions
   components/ui/     shadcn primitives

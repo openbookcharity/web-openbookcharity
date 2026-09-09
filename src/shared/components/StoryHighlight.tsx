@@ -23,7 +23,7 @@ export function StoryHighlight({
   stories: StoryItem[];
 }) {
   return (
-    <section className="py-6 sm:py-12">
+    <section className="py-4 sm:py-12">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
@@ -31,7 +31,7 @@ export function StoryHighlight({
           description={description}
           align="center"
         />
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:mt-6 md:grid-cols-3">
           {stories.map((story) => (
             <figure
               key={story.name}

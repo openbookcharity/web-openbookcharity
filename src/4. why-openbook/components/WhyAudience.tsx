@@ -1,9 +1,66 @@
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/shared/components/Container";
 import { PhotoFrame } from "@/shared/components/PhotoFrame";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { cn } from "@/lib/utils";
+import { WHY_SETTINGS } from "../settings/why.settings";
+
+function FunnelCard({
+  step,
+  tone,
+}: {
+  step: {
+    n: string;
+    eyebrow: string;
+    title: string;
+    body: string;
+    caption: string;
+    hint: string;
+  };
+  tone: "light" | "navy" | "sand";
+}) {
+  const isNavy = tone === "navy";
+  const isSand = tone === "sand";
+
+  return (
+    <article
+      className={cn(
+        "h-full overflow-hidden rounded-2xl border",
+        isNavy && "border-transparent bg-navy text-navy-foreground",
+        isSand && "border-border bg-sand",
+        !isNavy && !isSand && "border-border bg-card",
+      )}
+    >
+      <PhotoFrame
+        caption={step.caption}
+        hint={step.hint}
+        tone={isNavy ? "navy" : "light"}
+        className="min-h-[160px] rounded-none border-x-0 border-t-0 lg:min-h-[180px]"
+      />
+      <div className="p-5 sm:p-6">
+        <p className={cn("text-eyebrow", isNavy ? "text-navy-foreground/55" : "text-accent")}>
+          {step.n} · {step.eyebrow}
+        </p>
+        <h3 className={cn("mt-3 text-2xl", isNavy ? "text-navy-foreground" : "text-navy")}>
+          {step.title}
+        </h3>
+        <p
+          className={cn(
+            "mt-3 text-base leading-relaxed",
+            isNavy ? "text-navy-foreground/80" : "text-muted-foreground",
+          )}
+        >
+          {step.body}
+        </p>
+      </div>
+    </article>
+  );
+}
 
 export function WhyAudience() {
   const { m } = useI18n();
+  const steps = m.why.funnel;
 
   return (
     <section className="border-t border-border py-8 sm:py-20">
@@ -18,38 +75,38 @@ export function WhyAudience() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          <article className="overflow-hidden rounded-2xl border border-border bg-card">
-            <PhotoFrame
-              caption={m.why.donorCaption}
-              hint={m.why.donorHint}
-              className="min-h-[160px] rounded-none border-x-0 border-t-0 lg:min-h-[180px]"
-            />
-            <div className="p-5 sm:p-6">
-              <p className="text-eyebrow text-accent">{m.why.donorEyebrow}</p>
-              <h3 className="mt-3 text-2xl text-navy">{m.why.donorTitle}</h3>
-              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                {m.why.donorBody}
-              </p>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-2xl bg-navy text-navy-foreground">
-            <PhotoFrame
-              caption={m.why.orgCaption}
-              hint={m.why.orgHint}
-              tone="navy"
-              className="min-h-[160px] rounded-none border-x-0 border-t-0 lg:min-h-[180px]"
-            />
-            <div className="p-5 sm:p-6">
-              <p className="text-eyebrow text-navy-foreground/55">{m.why.orgEyebrow}</p>
-              <h3 className="mt-3 text-2xl">{m.why.orgTitle}</h3>
-              <p className="mt-3 text-base leading-relaxed text-navy-foreground/80">
-                {m.why.orgBody}
-              </p>
-            </div>
-          </article>
+        <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2">
+          {m.why.funnelPath.map((label, index) => (
+            <span key={label} className="inline-flex items-center gap-3">
+              {index > 0 ? (
+                <ArrowRight className="size-4 shrink-0 text-accent" aria-hidden />
+              ) : null}
+              <span className="text-sm font-bold text-navy">
+                {String(index + 1).padStart(2, "0")} {label}
+              </span>
+            </span>
+          ))}
         </div>
       </Container>
+
+      <Carousel
+        opts={{ align: "start", loop: false }}
+        className="mt-8 w-full max-w-full overflow-x-clip lg:mx-auto lg:max-w-[84rem]"
+      >
+        <CarouselContent className="ml-0 pl-2">
+          {steps.map((step, index) => (
+            <CarouselItem
+              key={step.n}
+              className="basis-[calc((100%-0.5rem)*8/9)] pl-0 pr-2 last:pr-2 md:basis-[calc((100%-0.5rem)*4/9)]"
+            >
+              <FunnelCard
+                step={step}
+                tone={WHY_SETTINGS.funnel[index]?.tone ?? "light"}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }

@@ -5,7 +5,7 @@ export function StatsStrip() {
   const { m } = useI18n();
 
   return (
-    <section className="border-y border-border bg-card py-6 sm:py-12">
+    <section className="border-y border-border bg-card py-4 sm:py-12">
       <Container className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {m.home.stats.map((stat) => (
           <div key={stat.label}>
