@@ -188,3 +188,19 @@
   touch-action: pan-x pan-y;
   -webkit-overflow-scrolling: touch;
 }
+
+@keyframes topbar-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-topbar-marquee {
+  animation: topbar-marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-topbar-marquee {
+    animation: none;
+  }
+}
