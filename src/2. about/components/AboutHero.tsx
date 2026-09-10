@@ -1,9 +1,9 @@
 import { ImageIcon } from "lucide-react";
+import { ABOUT_HERO_PHOTO } from "@/2. about/photos";
 import { Container } from "@/shared/components/Container";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
 
-/** Isi path di sini ketika foto sudah siap, misalnya `/about-hero.jpg`. */
-const HERO_IMAGE: string | undefined = undefined;
+const HERO_IMAGE = ABOUT_HERO_PHOTO;
 
 export function AboutHero() {
   const { m } = useI18n();
@@ -25,7 +25,13 @@ export function AboutHero() {
             </p>
           </div>
 
-          <figure className="relative min-h-[280px] overflow-hidden rounded-2xl border border-dashed border-navy/20 bg-muted lg:min-h-[420px]">
+          <figure
+            className={
+              HERO_IMAGE
+                ? "relative min-h-[280px] overflow-hidden rounded-2xl border border-border bg-card shadow-soft lg:min-h-[420px]"
+                : "relative min-h-[280px] overflow-hidden rounded-2xl border border-dashed border-navy/20 bg-muted lg:min-h-[420px]"
+            }
+          >
             {HERO_IMAGE ? (
               <img
                 src={HERO_IMAGE}

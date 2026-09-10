@@ -52,16 +52,23 @@ export function KonfirmasiGuide() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-nowrap items-center gap-1.5 sm:flex-wrap sm:gap-3">
           <a
             href={SITE_CONTACT.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className={cn(ctaVariants({ variant: "solid", size: "md" }))}
+            className={cn(
+              ctaVariants({ variant: "solid" }),
+              "h-8 shrink-0 px-2.5 text-[11px] leading-tight sm:h-11 sm:px-6 sm:text-sm sm:leading-normal",
+            )}
           >
             {m.konfirmasi.whatsappButton}
           </a>
-          <CtaButton to={SITE_CONTACT.rekeningPath} size="md" variant="outline">
+          <CtaButton
+            to={SITE_CONTACT.rekeningPath}
+            variant="outline"
+            className="h-8 shrink-0 border px-2.5 text-[11px] leading-tight sm:h-11 sm:border-2 sm:px-6 sm:text-sm sm:leading-normal"
+          >
             {m.konfirmasi.rekeningButton}
           </CtaButton>
         </div>

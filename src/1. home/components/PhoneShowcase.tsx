@@ -1,20 +1,50 @@
+import { useEffect, useRef, useState } from "react";
 import { Play, Clapperboard } from "lucide-react";
-import heroImage from "@/assets/impact-hero.jpg";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import type { Messages } from "@/shared/i18n/messages";
+import { cn } from "@/lib/utils";
+import { HOME_HERO_VIDEO_POSTERS, HOME_HERO_VIDEO_SOURCES } from "../photos";
 
-export function PhoneShowcase() {
+type HeroVideoSlide = Messages["home"]["heroVideos"][number];
+
+function PhoneShowcaseCard({
+  slide,
+  poster,
+  videoSrc,
+  isActive,
+}: {
+  slide: HeroVideoSlide;
+  poster?: string | undefined;
+  videoSrc?: string | undefined;
+  isActive: boolean;
+}) {
   const { m } = useI18n();
-  const copy = m.home.phone;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoSrc) return;
+
+    if (isActive) {
+      video.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    } else {
+      video.pause();
+      video.currentTime = 0;
+      setPlaying(false);
+    }
+  }, [isActive, videoSrc]);
+
+  const showPlayOverlay = !videoSrc || !playing;
 
   return (
-    <div className="relative mx-auto w-full max-w-md overflow-x-clip">
-      <div className="absolute -left-6 top-24 hidden size-3 rounded-full bg-accent/50 lg:block" />
+    <div className="relative mx-auto w-full max-w-lg overflow-visible">
       <div className="absolute right-0 top-0 z-20 rounded-2xl bg-navy px-5 py-4 text-navy-foreground shadow-float sm:-right-4 sm:-top-4">
         <p className="flex items-center gap-2 text-eyebrow text-navy-foreground/70">
-          <span className="size-2 rounded-full bg-primary" /> {copy.reportScore}
+          <span className="size-2 rounded-full bg-primary" /> {m.home.reportScore}
         </p>
-        <p className="mt-1 font-display text-3xl">78</p>
-        <p className="text-xs text-navy-foreground/70">{copy.followUp}</p>
+        <p className="mt-1 font-display text-3xl text-navy-foreground">{slide.reportScore}</p>
+        <p className="text-xs text-navy-foreground/70">{slide.followUp}</p>
       </div>
 
       <div className="rounded-[2.5rem] border border-border bg-card p-3 shadow-float">
@@ -24,40 +54,58 @@ export function PhoneShowcase() {
             <span>OpenBook</span>
           </div>
           <div className="relative">
-            <img
-              src={heroImage}
-              alt={copy.imageAlt}
-              width={900}
-              height={1200}
-              className="h-72 w-full object-cover"
-            />
-            <button
-              type="button"
-              aria-label={copy.playVideo}
-              className="absolute inset-0 m-auto inline-flex size-16 items-center justify-center rounded-full bg-card/90 text-navy shadow-float transition-transform hover:scale-105"
-            >
-              <Play className="size-6 fill-current" />
-            </button>
+            {videoSrc ? (
+              <video
+                ref={videoRef}
+                src={videoSrc}
+                poster={poster}
+                muted
+                playsInline
+                loop
+                className="h-80 w-full object-cover sm:h-[22rem]"
+              />
+            ) : (
+              poster && (
+                <img
+                  src={poster}
+                  alt={slide.posterAlt}
+                  width={900}
+                  height={1200}
+                  className="h-80 w-full object-cover sm:h-[22rem]"
+                />
+              )
+            )}
+            {showPlayOverlay && (
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 m-auto inline-flex size-16 items-center justify-center rounded-full bg-card/90 text-navy shadow-float"
+              >
+                <Play className="size-6 fill-current" />
+              </span>
+            )}
           </div>
           <div className="bg-card px-5 py-4">
-            <p className="font-display text-lg leading-tight text-navy">
-              {copy.programTitle}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {copy.programCaption}
-            </p>
+            <p className="font-display text-lg leading-tight text-navy">{slide.programTitle}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{slide.programCaption}</p>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-0 left-0 z-20 w-52 rounded-2xl bg-card p-4 shadow-float sm:-bottom-6 sm:-left-4 sm:w-56">
-        <p className="text-sm font-semibold text-navy">{copy.dimas}</p>
+        <p className="text-sm font-semibold text-navy">{slide.fundTitle}</p>
         <div className="mt-3 h-1.5 w-full rounded-full bg-muted">
-          <div className="h-full w-[73%] rounded-full bg-accent" />
+          <div
+            className="h-full rounded-full bg-accent"
+            style={{ width: `${slide.fundProgress}%` }}
+          />
         </div>
         <div className="mt-2 flex justify-between text-[11px] text-muted-foreground">
-          <span>73% {copy.collected}</span>
-          <span>Rp32,8 jt {copy.collected}</span>
+          <span>
+            {slide.fundProgress}% {slide.collected}
+          </span>
+          <span>
+            {slide.fundRaised} {slide.collected}
+          </span>
         </div>
       </div>
 
@@ -67,15 +115,91 @@ export function PhoneShowcase() {
             <Clapperboard className="size-4" />
           </span>
           <div>
-            <p className="text-sm font-semibold leading-tight text-navy">
-              {copy.impactTitle}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {copy.impactBody}
-            </p>
+            <p className="text-sm font-semibold leading-tight text-navy">{slide.impactTitle}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{slide.impactBody}</p>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+function HeroVideoCarousel({
+  slides,
+}: {
+  slides: readonly HeroVideoSlide[];
+}) {
+  const [active, setActive] = useState(0);
+  const count = slides.length;
+
+  useEffect(() => {
+    if (count < 2) return undefined;
+
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (motionQuery.matches) return undefined;
+
+    const id = window.setInterval(() => {
+      setActive((current) => (current + 1) % count);
+    }, 6000);
+
+    return () => window.clearInterval(id);
+  }, [count]);
+
+  if (count === 0) return null;
+
+  return (
+    <div className="mx-auto w-full max-w-lg pb-2">
+      <div className="relative min-h-[440px] w-full sm:min-h-[540px]">
+        {slides.map((slide, index) => {
+          const isActive = index === active;
+          const poster = HOME_HERO_VIDEO_POSTERS[index];
+          const videoSrc = HOME_HERO_VIDEO_SOURCES[index];
+
+          return (
+            <div
+              key={slide.programTitle}
+              aria-hidden={!isActive}
+              className={cn(
+                "inset-0 transition-opacity duration-700 ease-in-out motion-reduce:transition-none",
+                isActive
+                  ? "relative z-10 opacity-100"
+                  : "pointer-events-none absolute z-0 opacity-0",
+              )}
+            >
+              <PhoneShowcaseCard
+                slide={slide}
+                poster={poster}
+                videoSrc={videoSrc}
+                isActive={isActive}
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      {count > 1 && (
+        <div className="mt-5 flex justify-center gap-2">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.programTitle}
+              type="button"
+              aria-label={slide.playVideo}
+              aria-current={index === active ? "true" : undefined}
+              onClick={() => setActive(index)}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300",
+                index === active ? "w-6 bg-accent" : "w-2 bg-border hover:bg-accent/40",
+              )}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function PhoneShowcase() {
+  const { m } = useI18n();
+
+  return <HeroVideoCarousel slides={m.home.heroVideos} />;
 }

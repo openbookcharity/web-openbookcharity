@@ -30,7 +30,7 @@ export function SiteHeader() {
                 activeOptions={{ exact: true }}
                 className="relative pb-1 text-sm font-bold text-navy/70 transition-colors hover:text-secondary data-[status=active]:text-secondary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
               >
-                {m.nav[link.key]}
+                {link.label}
               </Link>
             ))}
           </div>
@@ -63,7 +63,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3 py-3 text-sm font-bold text-navy/80 transition-colors hover:bg-muted hover:text-secondary data-[status=active]:bg-muted data-[status=active]:text-secondary"
               >
-                {m.nav[link.key]}
+                {link.label}
               </Link>
             ))}
             <div className="mt-1 flex items-center justify-between rounded-xl px-3 py-3">

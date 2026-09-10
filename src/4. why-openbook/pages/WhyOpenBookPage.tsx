@@ -4,6 +4,7 @@ import { useI18n } from "@/shared/i18n/LanguageProvider";
 import { useTranslatedStories } from "@/shared/i18n/useTranslatedStories";
 import { WhyOpenBookHero } from "../components/WhyOpenBookHero";
 import { WhyProblem } from "../components/WhyProblem";
+import { WhyTransparencyLayers } from "../components/WhyTransparencyLayers";
 import { WhyContrast } from "../components/WhyContrast";
 import { WhyBenefits } from "../components/WhyBenefits";
 import { WhyGallery } from "../components/WhyGallery";
@@ -18,6 +19,7 @@ export function WhyOpenBookPage() {
     <PageLayout>
       <WhyOpenBookHero />
       <WhyProblem />
+      <WhyTransparencyLayers />
       <WhyContrast />
       <WhyBenefits />
       <WhyGallery />

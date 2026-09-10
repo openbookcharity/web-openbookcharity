@@ -21,7 +21,7 @@ const id = {
   },
   footer: {
     blurb:
-      "Donasimu disalurkan untuk aksi nyata dengan transparansi laporan dan bukti video.",
+      "Transparansi sampai mutasi rekening bank — donasi QRIS maupun transfer langsung tercatat dan dapat dipantau publik.",
     platform: "Program",
     overview: "Ringkasan",
     org: "Informasi",
@@ -52,9 +52,9 @@ const id = {
   home: {
     badge: "12+ kota · 22.000+ program terbantu",
     heroLines: ["Pastikan donasimu", "tepat sasaran."],
-    heroEmphasis: "Semua tercatat transparan.",
+    heroEmphasis: "Transparan sampai mutasi rekening bank.",
     heroDescription:
-      "Salurkan donasimu ke program terpilih dan pantau penyalurannya secara nyata, dari awal hingga diterima.",
+      "Donasi lewat QRIS, e-wallet, maupun transfer rekening langsung tercatat dan dipublikasikan. Pantau penyaluran dari awal hingga diterima penerima manfaat.",
     reviewsSuffix: "donatur",
     reviewsFrom: "dari",
     reviewsScoreMax: "/5.0",
@@ -79,7 +79,7 @@ const id = {
       },
       {
         title: "Laporan Keuangan Transparan",
-        body: "Rincian alokasi biaya, jumlah penyaluran, hingga sisa dana dapat diakses secara terbuka oleh publik.",
+        body: "Bukan hanya data payment gateway — seluruh dana masuk ke rekening organisasi direkonsiliasi dan dipublikasikan, termasuk transfer bank langsung.",
       },
       {
         title: "Indikator Akuntabilitas",
@@ -96,29 +96,29 @@ const id = {
         hint: "Bantuan pengobatan & fasilitas kesehatan warga.",
       },
       {
-        id: "usaha",
-        title: "Pemberdayaan Usaha",
-        hint: "Modal kerja & pendampingan untuk UMKM mandiri.",
-      },
-      {
         id: "pendidikan",
         title: "Pendidikan",
         hint: "Beasiswa & pemenuhan fasilitas belajar anak.",
       },
       {
+        id: "keagamaan",
+        title: "Rumah Ibadah & Keagamaan",
+        hint: "Renovasi tempat ibadah, sarana ibadah warga, & kegiatan keagamaan.",
+      },
+      {
         id: "lapangan",
-        title: "Tanggap Bencana & Aksi Sosial",
+        title: "Tanggap Bencana & Sosial",
         hint: "Penyaluran logistik & bantuan darurat di area terdampak.",
       },
       {
-        id: "penerima",
-        title: "Bantuan Sosial & Keluarga",
-        hint: "Dukungan langsung untuk pemenuhan kebutuhan hidup keluarga prasejahtera.",
+        id: "dhuafa",
+        title: "Bantuan Sosial & Dhuafa",
+        hint: "Penyaluran sembako, santunan lansia, & bantuan langsung keluarga prasejahtera.",
       },
       {
-        id: "terbuka",
-        title: "Infrastruktur & Komunitas",
-        hint: "Pembangunan fasilitas umum dan program pemberdayaan masyarakat.",
+        id: "disabilitas",
+        title: "Bantuan Disabilitas",
+        hint: "Bantuan alat bantu gerak, terapi, & pelatihan kemandirian difabel.",
       },
     ],
     galleryEyebrow: "Dari lapangan",
@@ -149,22 +149,54 @@ const id = {
     transferSubmit: "Masuk ke Portal Mitra",
     transferPending: "Mengirim…",
     transferDone: "Permintaan sudah dikirim, menunggu tinjauan.",
-    ctaTitle: "Galang Dana secara transparan dan berikan kepastian bagi para donatur.",
+    ctaTitle: "Tampilkan Transparansi 100% untuk Program Kamu.",
     ctaBody:
-      "Buat kampanye sosialmu di OpenBook Charity dan izinkan donatur memantau penyalurannya secara langsung.",
-    ctaButton: "Mulai Galang Dana",
-    phone: {
-      reportScore: "Skor laporan",
-      followUp: "Aktif · 12 item tindak lanjut",
-      playVideo: "Putar video dampak",
-      programTitle: "Bantu Nenek Sari Memulai Usaha Jagung",
-      programCaption: "Sari diasuh bersama cucunya di Magelang.",
-      dimas: "Harapan Baru untuk Dimas",
-      collected: "terkumpul",
-      impactTitle: "Laporan dampak diterima",
-      impactBody: "Donatur bisa melihat apa yang berubah.",
-      imageAlt: "Nenek Sari menggendong cucunya di depan rumah di Magelang",
-    },
+      "Publikasikan seluruh dana yang masuk, mulai dari donasi online hingga transfer bank langsung. Bangun kepercayaan donatur dengan laporan mutasi yang akurat.",
+    ctaButton: "Daftarkan Program Kamu",
+    heroVideos: [
+      {
+        reportScore: "82",
+        followUp: "Aktif · 12 item tindak lanjut",
+        playVideo: "Putar video dampak",
+        programTitle: "Bantu Nenek Sari Memulai Usaha Jagung",
+        programCaption: "Sari diasuh bersama cucunya di Magelang.",
+        fundTitle: "Bantu Nenek Sari Memulai Usaha Jagung",
+        fundProgress: 68,
+        fundRaised: "Rp28,5 jt",
+        collected: "terkumpul",
+        impactTitle: "Laporan dampak diterima",
+        impactBody: "Donatur bisa melihat apa yang berubah.",
+        posterAlt: "Nenek Sari menggendong cucunya di depan rumah di Magelang",
+      },
+      {
+        reportScore: "78",
+        followUp: "Aktif · 8 item tindak lanjut",
+        playVideo: "Putar video dampak",
+        programTitle: "Harapan Baru untuk Dimas",
+        programCaption: "Bantuan pendidikan untuk Dimas di Makassar.",
+        fundTitle: "Harapan Baru untuk Dimas",
+        fundProgress: 73,
+        fundRaised: "Rp32,8 jt",
+        collected: "terkumpul",
+        impactTitle: "Video update dari lapangan",
+        impactBody: "Donatur melihat langsung penyaluran bantuan.",
+        posterAlt: "Dimas menerima bantuan pendidikan",
+      },
+      {
+        reportScore: "85",
+        followUp: "Aktif · 5 item tindak lanjut",
+        playVideo: "Putar video dampak",
+        programTitle: "Fasilitas Air Bersih untuk Siswa SD Oebelo",
+        programCaption: "Instalasi air bersih di Kupang, NTT.",
+        fundTitle: "Fasilitas Air Bersih untuk Siswa SD Oebelo",
+        fundProgress: 91,
+        fundRaised: "Rp45,2 jt",
+        collected: "terkumpul",
+        impactTitle: "Serah terima fasilitas air",
+        impactBody: "Siswa SD Oebelo mulai memakai air bersih.",
+        posterAlt: "Fasilitas air bersih di SD Oebelo",
+      },
+    ],
     projects: [
       { id: "dimas-harapan", title: "Harapan Baru untuk Dimas" },
       { id: "nenek-sari-jagung", title: "Bantu Nenek Sari Memulai Usaha Jagung" },
@@ -197,7 +229,7 @@ const id = {
       "OpenBook Charity lahir dari kerinduan akan sistem donasi yang jujur, terbuka, dan dapat dipertanggungjawabkan kepada publik.",
     heroPhoto: "Gambar sementara",
     heroPhotoHint: "Taruh foto di sini: potret pendiri, komunitas, atau momen memberi.",
-    heroAlt: "Pendiri OpenBook Charity bersama komunitas",
+    heroAlt: "Jemaat gereja sedang berdoa bersama",
     conflictEyebrow: "Akar cerita",
     conflictTitle:
       "Donasi Terus Mengalir, Namun Kejelasan Alokasinya Masih Menjadi Pertanyaan.",
@@ -295,9 +327,9 @@ const id = {
   },
   why: {
     eyebrow: "Why Us",
-    title: "Membangun Kepercayaan Lewat Transparansi Nyata.",
-    p1: "Di era digital, kejelasan informasi adalah kunci utama dalam berdonasi. OpenBook Charity hadir sebagai platform yang memastikan setiap kontribusi tercatat secara terbuka dan penyalurannya dapat dipantau langsung.",
-    p2: "Kami memberikan akses penuh bagi donatur untuk melihat dampak dari bantuan mereka, sekaligus membantu mitra membangun rekam jejak yang tepercaya melalui laporan yang akuntabel.",
+    title: "Transparansi Sampai Mutasi Rekening Bank.",
+    p1: "Banyak platform charity menampilkan donasi yang lewat payment gateway — QRIS, e-wallet, virtual account — karena data tersebut otomatis masuk ke sistem mereka. Transparansi terasa ada, tetapi belum selalu utuh.",
+    p2: "OpenBook Charity bekerja satu level lebih dalam: setiap dana yang masuk ke rekening organisasi direkonsiliasi dan dipublikasikan, termasuk transfer bank langsung dari donatur dan jemaat.",
     heroRaiseFunds: "Mulai Galang Dana",
     heroSeeProgram: "Lihat Program",
     stats: [
@@ -306,38 +338,93 @@ const id = {
       { value: "94%", label: "Dana Tersalurkan" },
       { value: "6 hari", label: "Rata-rata Waktu Laporan" },
     ],
+    layersEyebrow: "Transparansi tingkat mutasi bank",
+    layersTitle:
+      "Satu satunya platform charity yang transparan sampai mutasi rekening resmi.",
+    layersIntro:
+      "Ketika platform lain hanya menampilkan transaksi QRIS dan e wallet, OpenBook Charity mencocokkan seluruh aliran dana, termasuk transfer manual, langsung dari mutasi bank ke laporan publik.",
+    layersMindmapHook: "Tahukah kamu?",
+    layersMindmapCause:
+      "Platform lain hanya menampilkan transaksi otomatis dari payment gateway.",
+    layersMindmapEffectLead: "Akibatnya,",
+    layersMindmapEffectBody:
+      "donasi transfer manual ke rekening bank sering tidak ikut dihitung di angka publik website.",
+    layersMindmapVisibleHub: "Platform charity lain",
+    layersMindmapVisibleSub: "Hanya menampilkan donasi online (QRIS, e wallet, VA)",
+    layersMindmapHiddenHub: "Transfer manual ke rekening",
+    layersMindmapHiddenSub: "Sering tidak masuk angka publik",
+    layersMindmapRealityHub: "Yang sebenarnya masuk rekening bank",
+    layersMindmapRealitySub: "Gabungan donasi online + transfer manual",
+    layersMindmapConnectorVisible: "Tercatat otomatis",
+    layersMindmapConnectorHidden: "Sering tidak dipublikasikan",
+    layersGatewayLabel: "Donasi online",
+    layersGatewayItems: [
+      "QRIS & scan bayar",
+      "GoPay, OVO, dan e wallet",
+      "Virtual account",
+    ],
+    layersGatewayNote: "QRIS, e wallet, dan VA, tercatat otomatis.",
+    layersDirectLabel: "Transfer manual ke rekening",
+    layersDirectItems: [
+      "ATM dan teller bank",
+      "Mobile banking / internet banking",
+      "Donasi jemaat, CSR, dan transfer perusahaan",
+    ],
+    layersDirectNote: "Uang sudah masuk rekening, tapi sering tidak tampil di website.",
+    layersExampleGateway: "Rp 500 juta tampil publik",
+    layersExampleDirect: "Rp 300 juta sering tidak tampil",
+    layersExampleTotal: "Rp 800 juta total di rekening",
+    layersExampleSummary: "Rp 500 juta + Rp 300 juta = Rp 800 juta total di rekening",
+    layersExampleFootnote: "*Angka di atas merupakan simulasi perhitungan.",
+    layersCompareTitle: "Platform lain vs OpenBook Charity",
+    layersCompareOthersTitle: "Platform charity lain",
+    layersCompareOthersSub: "Hanya donasi online yang tampil",
+    layersCompareOthersBadge: "Rp 500 juta",
+    layersCompareOpenBookTitle: "OpenBook Charity",
+    layersCompareOpenBookSub: "Online + transfer manual dipublikasikan",
+    layersCompareOpenBookBadge: "Rp 800 juta",
+    layersSolutionEyebrow: "Solusi OpenBook Charity",
+    layersSolutionTitle: "Cara kami menampilkan seluruh dana yang masuk",
+    layersOpenBookLabel: "OpenBook Charity",
+    layersOpenBookBody:
+      "Kami mencocokkan setiap rupiah yang masuk ke mutasi rekening bank, termasuk transfer manual, lalu mempublikasikannya sepenuhnya untuk publik.",
+    layersSteps: [
+      { n: "01", title: "Donasi masuk", body: "QRIS, e wallet, VA, atau transfer ke rekening bank." },
+      { n: "02", title: "Cocokkan mutasi", body: "Setiap transfer dicek dengan mutasi rekening bank organisasi." },
+      { n: "03", title: "Publikasi program", body: "Total dari semua sumber tampil di laporan program." },
+    ],
     problemEyebrow: "Masalahnya",
-    problemTitle: "Tantangan Utama dalam Metode Penggalangan Konvensional.",
+    problemTitle: "Transparansi Gateway Saja Belum Cukup.",
     problemP1:
-      "Pada sistem penggalangan konvensional, donasi yang terkumpul sering kali tidak diimbangi dengan pelaporan berkala. Akibatnya, donatur kesulitan mengetahui alokasi serta dampak nyata dari bantuan yang telah disalurkan.",
+      "Pola umum di industri charity digital: angka donasi publik diambil dari data payment gateway yang terintegrasi. QRIS, e-wallet, dan virtual account tercatat otomatis — dan itu memang terlihat transparan.",
     problemP2:
-      "Tanpa adanya platform pelaporan yang jelas, donatur tidak memiliki akses untuk memantau perkembangan program. Hal ini secara perlahan mengikis rasa percaya dan menurunkan partisipasi masyarakat untuk berdonasi.",
-    problemQuote: "Kepercayaan Dibangun Melalui Keterbukaan Real-Time",
+      "Sementara itu, donasi lewat transfer rekening langsung sering kali tidak ikut dipublikasikan. Donatur dan jemaat yang berdonasi lewat rekening bank tidak selalu bisa memastikan kontribusinya masuk ke angka yang ditampilkan publik.",
+    problemQuote: "Donatur Berhak Melihat Seluruh Dana yang Masuk ke Rekening",
     problemQuoteBody:
-      "Dibutuhkan sistem pelaporan yang dapat diakses publik secara berkala: pencatatan transparan, alokasi yang dapat dilacak, dan pembaruan dampak yang jelas.",
+      "Transparansi sejati bukan hanya integrasi payment gateway. Donatur berhak melihat total dana yang benar-benar masuk ke rekening organisasi — dari semua jalur, tanpa celah.",
     problemPhotoAlt: "Jemaat memasukkan uang ke kantong kolekte merah di gereja.",
     contrastEyebrow: "Bedanya",
-    contrastTitle: "Di Perbedaan cara kerja yang memberi kepastian transparansi.",
+    contrastTitle: "Perbedaan transparansi gateway dan transparansi rekening bank.",
     contrastIntro:
-      "OpenBook Charity hadir sebagai platform berdonasi dengan pencatatan terbuka. Donatur dapat memantau setiap kontribusi dan melihat bagaimana dana disalurkan melalui laporan yang akuntabel.",
-    without: "Tanpa OpenBook Charity",
-    with: "Dengan OpenBook Charity",
+      "OpenBook Charity hadir untuk menutup celah antara data payment gateway dan realitas mutasi rekening bank organisasi.",
+    without: "Platform gateway-only",
+    with: "OpenBook Charity",
     contrast: [
       {
-        old: "Alokasi penggunaan dana tidak terperinci.",
-        now: "Setiap program dilengkapi rincian biaya yang transparan.",
+        old: "Angka publik hanya dari payment gateway (QRIS, e-wallet, VA).",
+        now: "Semua sumber dana — gateway dan transfer rekening — direkonsiliasi dengan mutasi bank.",
       },
       {
-        old: "Pelaporan berkala jarang tersedia dan sulit diakses.",
-        now: "Pembaruan laporan berbasis video dan data secara berkala.",
+        old: "Transfer rekening langsung sering tidak tampil di laporan publik.",
+        now: "Transfer langsung yang dikonfirmasi ikut masuk pencatatan program.",
       },
       {
-        old: "Keterbatasan akses untuk memverifikasi penyaluran.",
-        now: "Alur penyaluran dana dapat dilacak hingga penerima manfaat.",
+        old: "Donatur tidak bisa memverifikasi total dana masuk ke rekening.",
+        now: "Donatur melihat total dari semua jalur donasi di laporan program.",
       },
       {
-        old: "Kepercayaan hanya berpatokan pada janji formalitas.",
-        now: "Kepercayaan dibuktikan dengan data akurat dan dokumentasi lapangan.",
+        old: "Transparansi berhenti di integrasi teknis gateway.",
+        now: "Transparansi sampai back office rekening bank dan bukti lapangan.",
       },
     ],
     benefitsEyebrow: "Yang Anda dapat",
@@ -358,7 +445,7 @@ const id = {
       {
         n: "03",
         title: "Pencatatan Keuangan Transparan",
-        body: "Rincian biaya, penyaluran, dan sisa dana dapat diakses secara terbuka oleh publik, memastikan mayoritas dana dialokasikan langsung untuk program.",
+        body: "Setiap dana masuk ke rekening organisasi — gateway maupun transfer langsung — direkonsiliasi dan dipublikasikan. Rincian biaya, penyaluran, dan sisa dana terbuka untuk publik.",
       },
       {
         n: "04",
@@ -436,7 +523,7 @@ const id = {
       {
         n: "02",
         title: "Terima Donasi",
-        body: "Setiap dana masuk dialokasikan khusus ke program pilihan, tanpa tercampur dengan anggaran umum.",
+        body: "Dana masuk lewat payment gateway maupun transfer rekening langsung. Semua jalur direkonsiliasi dengan mutasi bank dan dialokasikan ke program pilihan.",
       },
       {
         n: "03",
@@ -463,7 +550,7 @@ const id = {
     donorEyebrow: "Untuk donatur",
     donorTitle: "Pantau Penyaluran Donasi",
     donorBody:
-      "Akses program yang Anda bantu untuk melihat rincian biaya, alokasi penyaluran, bukti video lapangan, hingga sisa dana secara terperinci kapan saja.",
+      "Akses program yang Anda bantu untuk melihat total dana masuk dari semua sumber — QRIS, e-wallet, maupun transfer rekening — plus rincian biaya, bukti video lapangan, dan sisa dana.",
     orgCaption: "Layar lembaga",
     orgHint: "Kelola program, unggah bukti, pantau skor.",
     orgEyebrow: "Untuk lembaga",
@@ -479,7 +566,7 @@ const id = {
       },
       {
         title: "Pelacakan Alur Dana",
-        body: "Setiap tahapan dari penerimaan hingga penyaluran tercatat secara runtut dan dapat diakses secara terbuka.",
+        body: "Setiap dana masuk — gateway maupun transfer rekening — direkonsiliasi dengan mutasi bank. Alur penerimaan hingga penyaluran tercatat runtut dan terbuka.",
       },
       {
         title: "Dokumentasi Video Real-Time",
@@ -547,7 +634,8 @@ const id = {
   },
   rekening: {
     bankTitle: "Metode transfer bank",
-    bankIntro: "Transfer lewat ATM atau internet banking ke rekening di bawah.",
+    bankIntro:
+      "Transfer lewat ATM atau internet banking ke rekening di bawah. Donasi transfer langsung ikut dipublikasikan setelah konfirmasi — sama seperti donasi lewat QRIS dan e-wallet.",
     groupDonasi: "Rekening donasi",
     numberSoon: "Nomor akan diumumkan",
     holderPrefix: "a/n",
@@ -577,10 +665,12 @@ const id = {
           "Ketik PIN, kemudian konfirmasi.",
         ],
         otherPrograms: [
-          "Tanggap Bencana & Aksi Sosial",
-          "Pemberdayaan Usaha",
+          "Kesehatan",
           "Pendidikan",
-          "Bantuan Sosial & Keluarga",
+          "Rumah Ibadah & Keagamaan",
+          "Tanggap Bencana & Sosial",
+          "Bantuan Sosial & Dhuafa",
+          "Bantuan Disabilitas",
         ],
         nestedAt: 2,
       },
@@ -627,7 +717,8 @@ const id = {
       },
     },
     qrisTitle: "Pembayaran via QRIS",
-    qrisIntro: "Scan kode QR di bawah lewat aplikasi yang mendukung QRIS.",
+    qrisIntro:
+      "Scan kode QR di bawah lewat aplikasi yang mendukung QRIS. QRIS tercatat otomatis; transfer rekening via konfirmasi — keduanya masuk laporan publik program.",
     qrisName: "QRIS OpenBook Charity",
     qrisHow: "Bagaimana donasi lewat QRIS dilakukan?",
     qrisHint: "Kode QR akan tampil di sini.",
@@ -670,6 +761,17 @@ const id = {
         body: "Tentu. Anda dapat mengakses halaman program yang Anda bantu kapan saja untuk melihat rincian alokasi biaya, realisasi penyaluran, bukti video kegiatan, hingga saldo sisa dana secara transparan.",
       },
       {
+        id: "direct-transfer-visible",
+        question: "Apakah donasi lewat transfer rekening ikut tampil di laporan publik?",
+        body: "Ya. OpenBook Charity merekonsiliasi donasi transfer rekening langsung dengan mutasi bank organisasi. Setelah Anda konfirmasi, donasi tersebut masuk ke pencatatan publik program — tidak hanya donasi lewat payment gateway.",
+      },
+      {
+        id: "gateway-vs-bank",
+        question:
+          "Apa bedanya transparansi OpenBook dengan platform yang hanya menampilkan data payment gateway?",
+        body: "Banyak platform menampilkan donasi yang lewat QRIS, e-wallet, dan virtual account karena data gateway otomatis masuk sistem. OpenBook Charity bekerja satu level lebih dalam: seluruh dana yang masuk ke rekening organisasi — termasuk transfer bank langsung — direkonsiliasi dan dipublikasikan ke publik.",
+      },
+      {
         id: "why-obc",
         question: "Apa latar belakang didirikannya OpenBook Charity?",
         body: "OpenBook Charity hadir atas inisiatif penggiat gereja yang merespons perlunya sistem keterbukaan atas dana pelayanan yang terkumpul. Kami menyediakan platform pelaporan terbuka agar setiap donatur dan jemaat dapat memastikan dana tersalurkan tepat sasaran secara akuntabel.",
@@ -699,10 +801,11 @@ const id = {
   konfirmasi: {
     title: "Konfirmasi Donasi",
     heading: "Konfirmasi Donasi",
-    intro: "Kirimkan bukti transfer untuk memastikan donasi Anda terverifikasi dengan akurat.",
+    intro:
+      "Kirimkan bukti transfer agar donasi rekening langsung terverifikasi dan masuk ke laporan publik — bukan hanya donasi lewat payment gateway.",
     whyTitle: "Mengapa Perlu Konfirmasi?",
     whyBody:
-      "Konfirmasi memudahkan kami mencocokkan transaksi Anda dengan mutasi rekening. Hal ini memastikan setiap donasi terdata dengan benar, terutama jika terdapat nominal transaksi yang sama dari donatur lain.",
+      "Konfirmasi memudahkan kami mencocokkan transaksi Anda dengan mutasi rekening bank organisasi. Inilah yang memastikan transfer langsung ikut tampil di pencatatan publik, selaras dengan positioning transparansi OpenBook Charity.",
     howTitle: "Langkah Konfirmasi Donasi",
     steps: [
       "Lakukan transfer ke rekening resmi OpenBook Charity.",
@@ -723,7 +826,7 @@ const id = {
     eyebrow: "Galang dana",
     title: "Mulai program terbuka pertama Anda",
     description:
-      "Ceritakan tentang lembaga Anda, dan kami akan membantu menerbitkan kegiatan berbiaya jelas yang pertama.",
+      "Ceritakan tentang lembaga Anda. Donasi jemaat lewat rekening bank tidak hilang dari catatan publik — semua sumber dana direkonsiliasi dan dipublikasikan.",
   },
   notFound: {
     title: "Halaman tidak ditemukan",
@@ -756,7 +859,7 @@ const en: typeof id = {
   },
   footer: {
     blurb:
-      "Your donation is delivered to real action with transparent reports and video proof.",
+      "Transparency down to bank account statements — QRIS and direct bank transfers are recorded and publicly monitorable.",
     platform: "Program",
     overview: "Overview",
     org: "Information",
@@ -787,9 +890,9 @@ const en: typeof id = {
   home: {
     badge: "12+ cities · 22,000+ programs helped",
     heroLines: ["Make sure your donation", "reaches the right target."],
-    heroEmphasis: "Everything recorded transparently.",
+    heroEmphasis: "Transparent down to bank account statements.",
     heroDescription:
-      "Send your donation to a chosen program and track the delivery for real, from start to finish.",
+      "Donations via QRIS, e-wallets, or direct bank transfer are recorded and published. Track delivery from start to beneficiary.",
     reviewsSuffix: "donors",
     reviewsFrom: "from",
     reviewsScoreMax: "/5.0",
@@ -814,7 +917,7 @@ const en: typeof id = {
       },
       {
         title: "Transparent financial reports",
-        body: "Cost breakdown, disbursements, and remaining funds are openly accessible to the public.",
+        body: "Not just payment gateway data — all funds entering the organisation's bank account are reconciled and published, including direct bank transfers.",
       },
       {
         title: "Accountability indicator",
@@ -831,29 +934,29 @@ const en: typeof id = {
         hint: "Medical care and health facilities for communities.",
       },
       {
-        id: "usaha",
-        title: "Business empowerment",
-        hint: "Working capital and mentoring for independent small businesses.",
-      },
-      {
         id: "pendidikan",
         title: "Education",
         hint: "Scholarships and learning facilities for children.",
       },
       {
+        id: "keagamaan",
+        title: "Places of worship & faith",
+        hint: "Worship space renovation, community religious facilities, and faith activities.",
+      },
+      {
         id: "lapangan",
-        title: "Disaster response & social action",
+        title: "Disaster response & social",
         hint: "Logistics and emergency aid in affected areas.",
       },
       {
-        id: "penerima",
-        title: "Social & family support",
-        hint: "Direct support for underprivileged families' basic living needs.",
+        id: "dhuafa",
+        title: "Social aid & dhuafa",
+        hint: "Food packages, elderly support, and direct aid for underprivileged families.",
       },
       {
-        id: "terbuka",
-        title: "Infrastructure & community",
-        hint: "Public facility development and community empowerment programs.",
+        id: "disabilitas",
+        title: "Disability support",
+        hint: "Mobility aids, therapy, and independence training for people with disabilities.",
       },
     ],
     galleryEyebrow: "From the field",
@@ -884,22 +987,54 @@ const en: typeof id = {
     transferSubmit: "Go to partner portal",
     transferPending: "Sending…",
     transferDone: "Request sent, awaiting review.",
-    ctaTitle: "Raise funds transparently and give donors certainty.",
+    ctaTitle: "Show 100% transparency for your program.",
     ctaBody:
-      "Create your social campaign on OpenBook Charity and let donors track delivery directly.",
-    ctaButton: "Start fundraising",
-    phone: {
-      reportScore: "Report score",
-      followUp: "Active · 12 follow-up items",
-      playVideo: "Play impact video",
-      programTitle: "Help Grandma Sari start a corn business",
-      programCaption: "Sari is cared for with her grandchild in Magelang.",
-      dimas: "New hope for Dimas",
-      collected: "raised",
-      impactTitle: "Impact report received",
-      impactBody: "Donors can see what changed.",
-      imageAlt: "Grandma Sari holding her grandchild in front of their home in Magelang",
-    },
+      "Publish every fund that comes in, from online donations to direct bank transfers. Build donor trust with accurate bank statement reports.",
+    ctaButton: "Register your program",
+    heroVideos: [
+      {
+        reportScore: "82",
+        followUp: "Active · 12 follow-up items",
+        playVideo: "Play impact video",
+        programTitle: "Help Grandma Sari Start a Corn Business",
+        programCaption: "Sari is cared for with her grandchild in Magelang.",
+        fundTitle: "Help Grandma Sari Start a Corn Business",
+        fundProgress: 68,
+        fundRaised: "Rp28.5M",
+        collected: "raised",
+        impactTitle: "Impact report received",
+        impactBody: "Donors can see what changed.",
+        posterAlt: "Grandma Sari holding her grandchild in front of their home in Magelang",
+      },
+      {
+        reportScore: "78",
+        followUp: "Active · 8 follow-up items",
+        playVideo: "Play impact video",
+        programTitle: "New Hope for Dimas",
+        programCaption: "Education support for Dimas in Makassar.",
+        fundTitle: "New Hope for Dimas",
+        fundProgress: 73,
+        fundRaised: "Rp32.8M",
+        collected: "raised",
+        impactTitle: "Field update video",
+        impactBody: "Donors see aid delivery directly.",
+        posterAlt: "Dimas receiving education support",
+      },
+      {
+        reportScore: "85",
+        followUp: "Active · 5 follow-up items",
+        playVideo: "Play impact video",
+        programTitle: "Clean Water Facilities for SD Oebelo Students",
+        programCaption: "Clean water installation in Kupang, NTT.",
+        fundTitle: "Clean Water Facilities for SD Oebelo Students",
+        fundProgress: 91,
+        fundRaised: "Rp45.2M",
+        collected: "raised",
+        impactTitle: "Water facility handover",
+        impactBody: "SD Oebelo students start using clean water.",
+        posterAlt: "Clean water facilities at SD Oebelo",
+      },
+    ],
     projects: [
       { id: "dimas-harapan", title: "New Hope for Dimas" },
       { id: "nenek-sari-jagung", title: "Help Grandma Sari Start a Corn Business" },
@@ -932,7 +1067,7 @@ const en: typeof id = {
       "OpenBook Charity was born from a longing for a donation system that is honest, open, and accountable to the public.",
     heroPhoto: "Photo coming soon",
     heroPhotoHint: "Place a photo here: founder, community, or a moment of giving.",
-    heroAlt: "OpenBook Charity founder with the community",
+    heroAlt: "Church congregation praying together",
     conflictEyebrow: "The root of the story",
     conflictTitle:
       "Donations keep flowing, yet clarity on allocation remains an open question.",
@@ -1030,9 +1165,9 @@ const en: typeof id = {
   },
   why: {
     eyebrow: "Why Us",
-    title: "Building Trust Through Real Transparency.",
-    p1: "In the digital era, clear information is the key to giving with confidence. OpenBook Charity is a platform that ensures every contribution is recorded openly and every distribution can be monitored directly.",
-    p2: "We give donors full access to see the impact of their help, while helping partners build a trusted track record through accountable reporting.",
+    title: "Transparency Down to Bank Account Statements.",
+    p1: "Many charity platforms display donations that come through payment gateways — QRIS, e-wallets, virtual accounts — because that data flows automatically into their systems. Transparency feels present, but it is not always complete.",
+    p2: "OpenBook Charity works one level deeper: every fund entering the organisation's bank account is reconciled and published, including direct bank transfers from donors and congregations.",
     heroRaiseFunds: "Start Raising Funds",
     heroSeeProgram: "See Programs",
     stats: [
@@ -1041,38 +1176,93 @@ const en: typeof id = {
       { value: "94%", label: "Funds Delivered" },
       { value: "6 days", label: "Average Reporting Time" },
     ],
+    layersEyebrow: "Bank statement level transparency",
+    layersTitle:
+      "The only charity platform transparent down to official bank statements.",
+    layersIntro:
+      "While other platforms only show QRIS and e wallet transactions, OpenBook Charity matches every fund flow, including manual transfers, from bank statements to public reports.",
+    layersMindmapHook: "Did you know?",
+    layersMindmapCause:
+      "Other platforms usually only show donations recorded automatically through payment gateways.",
+    layersMindmapEffectLead: "As a result,",
+    layersMindmapEffectBody:
+      "manual bank transfers often are not included in the public donation totals on their websites.",
+    layersMindmapVisibleHub: "Other charity platforms",
+    layersMindmapVisibleSub: "Only online donations shown (QRIS, e wallets, VA)",
+    layersMindmapHiddenHub: "Manual bank transfer",
+    layersMindmapHiddenSub: "Often missing from public totals",
+    layersMindmapRealityHub: "What actually entered the bank account",
+    layersMindmapRealitySub: "Online donations + manual transfers combined",
+    layersMindmapConnectorVisible: "Recorded automatically",
+    layersMindmapConnectorHidden: "Often not published",
+    layersGatewayLabel: "Online donations",
+    layersGatewayItems: [
+      "QRIS and scan to pay",
+      "GoPay, OVO, and e wallets",
+      "Virtual accounts",
+    ],
+    layersGatewayNote: "QRIS, e wallets, and VA, recorded automatically.",
+    layersDirectLabel: "Manual bank transfer",
+    layersDirectItems: [
+      "ATM and bank teller",
+      "Mobile banking / internet banking",
+      "Congregation donations, CSR, and corporate transfers",
+    ],
+    layersDirectNote: "Money is in the account, but often not shown on the website.",
+    layersExampleGateway: "Rp 500M shown publicly",
+    layersExampleDirect: "Rp 300M often not shown",
+    layersExampleTotal: "Rp 800M total in the account",
+    layersExampleSummary: "Rp 500M + Rp 300M = Rp 800M total in the account",
+    layersExampleFootnote: "*Figures above are simulated for illustration.",
+    layersCompareTitle: "Other platforms vs OpenBook Charity",
+    layersCompareOthersTitle: "Other charity platforms",
+    layersCompareOthersSub: "Only online donations are shown",
+    layersCompareOthersBadge: "Rp 500M",
+    layersCompareOpenBookTitle: "OpenBook Charity",
+    layersCompareOpenBookSub: "Online + manual transfers published",
+    layersCompareOpenBookBadge: "Rp 800M",
+    layersSolutionEyebrow: "The OpenBook Charity solution",
+    layersSolutionTitle: "How we show all funds that came in",
+    layersOpenBookLabel: "OpenBook Charity",
+    layersOpenBookBody:
+      "We match every rupiah against the organisation's bank statements, including manual transfers, then publish it all publicly.",
+    layersSteps: [
+      { n: "01", title: "Donation arrives", body: "QRIS, e wallet, VA, or bank transfer." },
+      { n: "02", title: "Match statements", body: "Every transfer is checked against the organisation's bank statements." },
+      { n: "03", title: "Program publication", body: "Totals from all sources appear in program reports." },
+    ],
     problemEyebrow: "The problem",
-    problemTitle: "Main Challenges in Conventional Fundraising Methods.",
+    problemTitle: "Gateway-Only Transparency Is Not Enough.",
     problemP1:
-      "In conventional fundraising systems, collected donations are often not matched with regular reporting. As a result, donors struggle to know the allocation and real impact of help that has been delivered.",
+      "A common pattern in digital charity: public donation figures come from integrated payment gateway data. QRIS, e-wallets, and virtual accounts are recorded automatically — and that does look transparent.",
     problemP2:
-      "Without a clear reporting platform, donors lack access to monitor program progress. This gradually erodes trust and reduces community participation in giving.",
-    problemQuote: "Trust Is Built Through Real-Time Openness",
+      "Meanwhile, direct bank transfers are often not published. Donors and congregations who give via bank account cannot always be sure their contribution is included in the numbers shown publicly.",
+    problemQuote: "Donors Deserve to See All Funds Entering the Account",
     problemQuoteBody:
-      "What is needed is a reporting system publicly accessible on a regular basis: transparent records, traceable allocation, and clear impact updates.",
+      "True transparency is not just payment gateway integration. Donors deserve to see the total funds that actually enter the organisation's bank account — from every channel, without gaps.",
     problemPhotoAlt: "Congregants putting money into a red collection bag in church.",
     contrastEyebrow: "The difference",
-    contrastTitle: "A different way of working that brings transparency you can rely on.",
+    contrastTitle: "Gateway transparency vs bank account transparency.",
     contrastIntro:
-      "OpenBook Charity is a giving platform with open records. Donors can monitor every contribution and see how funds are delivered through accountable reporting.",
-    without: "Without OpenBook Charity",
-    with: "With OpenBook Charity",
+      "OpenBook Charity exists to close the gap between payment gateway data and the reality of bank account statements.",
+    without: "Gateway-only platform",
+    with: "OpenBook Charity",
     contrast: [
       {
-        old: "Fund allocation is not detailed.",
-        now: "Every program includes transparent cost breakdowns.",
+        old: "Public figures only from payment gateway (QRIS, e-wallet, VA).",
+        now: "All fund sources — gateway and bank transfer — reconciled with bank statements.",
       },
       {
-        old: "Regular reports are rarely available and hard to access.",
-        now: "Report updates based on video and data, shared regularly.",
+        old: "Direct bank transfers often missing from public reports.",
+        now: "Confirmed direct transfers enter program records.",
       },
       {
-        old: "Limited access to verify distribution.",
-        now: "Fund distribution can be traced to beneficiaries.",
+        old: "Donors cannot verify total funds entering the account.",
+        now: "Donors see totals from every donation channel in program reports.",
       },
       {
-        old: "Trust relies only on formal promises.",
-        now: "Trust is backed by accurate data and field documentation.",
+        old: "Transparency stops at gateway integration.",
+        now: "Transparency reaches bank back office and field proof.",
       },
     ],
     benefitsEyebrow: "What you get",
@@ -1093,7 +1283,7 @@ const en: typeof id = {
       {
         n: "03",
         title: "Transparent Financial Records",
-        body: "Cost details, disbursements, and remaining funds are openly accessible to the public, ensuring most funds go directly to programs.",
+        body: "Every fund entering the organisation's account — gateway or direct transfer — is reconciled and published. Cost details, disbursements, and remaining funds are open to the public.",
       },
       {
         n: "04",
@@ -1171,7 +1361,7 @@ const en: typeof id = {
       {
         n: "02",
         title: "Receive Donations",
-        body: "Every incoming fund is allocated specifically to the chosen program, without mixing with general budgets.",
+        body: "Funds arrive via payment gateway or direct bank transfer. Every channel is reconciled with bank statements and allocated to the chosen program.",
       },
       {
         n: "03",
@@ -1198,7 +1388,7 @@ const en: typeof id = {
     donorEyebrow: "For donors",
     donorTitle: "Monitor Donation Delivery",
     donorBody:
-      "Access the programs you support to see cost details, disbursement allocation, field video proof, and remaining funds in detail anytime.",
+      "Access the programs you support to see total incoming funds from every source — QRIS, e-wallets, and bank transfers — plus cost details, field video proof, and remaining funds.",
     orgCaption: "Organisation screen",
     orgHint: "Manage programs, upload proof, watch the score.",
     orgEyebrow: "For organisations",
@@ -1214,7 +1404,7 @@ const en: typeof id = {
       },
       {
         title: "Fund Flow Tracking",
-        body: "Every stage from receipt to distribution is recorded in sequence and openly accessible.",
+        body: "Every incoming fund — gateway or bank transfer — is reconciled with bank statements. The flow from receipt to distribution is recorded and open.",
       },
       {
         title: "Real-Time Video Documentation",
@@ -1282,7 +1472,8 @@ const en: typeof id = {
   },
   rekening: {
     bankTitle: "Bank transfer",
-    bankIntro: "Transfer via ATM or internet banking to the accounts below.",
+    bankIntro:
+      "Transfer via ATM or internet banking to the accounts below. Direct bank transfers are published after confirmation — just like QRIS and e-wallet donations.",
     groupDonasi: "Donation accounts",
     numberSoon: "Account number to be announced",
     holderPrefix: "a/n",
@@ -1312,10 +1503,12 @@ const en: typeof id = {
           "Enter your PIN, then confirm.",
         ],
         otherPrograms: [
-          "Disaster response & social action",
-          "Business empowerment",
+          "Health",
           "Education",
-          "Social & family support",
+          "Places of worship & faith",
+          "Disaster response & social",
+          "Social aid & dhuafa",
+          "Disability support",
         ],
         nestedAt: 2,
       },
@@ -1362,7 +1555,8 @@ const en: typeof id = {
       },
     },
     qrisTitle: "Pay via QRIS",
-    qrisIntro: "Scan the QR code below with an app that supports QRIS.",
+    qrisIntro:
+      "Scan the QR code below with an app that supports QRIS. QRIS is recorded automatically; bank transfers via confirmation — both enter the program's public report.",
     qrisName: "OpenBook Charity QRIS",
     qrisHow: "How is a QRIS donation made?",
     qrisHint: "The QR code will appear here.",
@@ -1405,6 +1599,17 @@ const en: typeof id = {
         body: "Yes. You can access the program page you supported anytime to see cost allocation details, disbursement records, field video proof, and remaining balance transparently.",
       },
       {
+        id: "direct-transfer-visible",
+        question: "Are direct bank transfer donations shown in public reports?",
+        body: "Yes. OpenBook Charity reconciles direct bank transfers with the organisation's bank account statements. After you confirm, your donation enters the program's public records — not only gateway donations.",
+      },
+      {
+        id: "gateway-vs-bank",
+        question:
+          "How is OpenBook's transparency different from platforms that only show payment gateway data?",
+        body: "Many platforms display donations via QRIS, e-wallets, and virtual accounts because gateway data flows automatically. OpenBook Charity works one level deeper: all funds entering the organisation's bank account — including direct bank transfers — are reconciled and published.",
+      },
+      {
         id: "why-obc",
         question: "What is the background behind OpenBook Charity?",
         body: "OpenBook Charity was founded by church community leaders responding to the need for openness over collected ministry funds. We provide an open reporting platform so every donor and congregant can ensure funds reach the right recipients accountably.",
@@ -1434,10 +1639,11 @@ const en: typeof id = {
   konfirmasi: {
     title: "Donation Confirmation",
     heading: "Donation Confirmation",
-    intro: "Send your transfer proof to ensure your donation is verified accurately.",
+    intro:
+      "Send your transfer proof so direct bank donations are verified and enter the public report — not only gateway donations.",
     whyTitle: "Why Confirmation Is Needed",
     whyBody:
-      "Confirmation helps us match your transaction with our bank records. This ensures every donation is recorded correctly, especially when several donors transfer the same amount.",
+      "Confirmation helps us match your transaction with the organisation's bank account statements. This is what ensures direct transfers appear in public records, aligned with OpenBook Charity's transparency positioning.",
     howTitle: "Donation Confirmation Steps",
     steps: [
       "Transfer to the official OpenBook Charity account.",
@@ -1458,7 +1664,7 @@ const en: typeof id = {
     eyebrow: "Raise funds",
     title: "Start your first open program",
     description:
-      "Tell us about your organisation, and we will help publish your first activity with clear costs.",
+      "Tell us about your organisation. Congregation donations via bank account do not disappear from public records — every fund source is reconciled and published.",
   },
   notFound: {
     title: "Page not found",

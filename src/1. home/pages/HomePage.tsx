@@ -11,6 +11,7 @@ import { HomeGallery } from "../components/HomeGallery";
 import { ProjectsGrid } from "../components/ProjectsGrid";
 import { TransferOwnershipPanel } from "../transfer-ownership/TransferOwnershipPanel";
 import { HomeCtaBanner } from "../components/HomeCtaBanner";
+import { WhyTransparencyLayers } from "@/4. why-openbook/components/WhyTransparencyLayers";
 
 export function HomePage() {
   const { m } = useI18n();
@@ -21,6 +22,7 @@ export function HomePage() {
       <PageLayout>
         <HomeHero />
         <StatsStrip />
+        <WhyTransparencyLayers />
         <HomePrograms />
         <FeatureGrid />
         <HomeGallery />
