@@ -10,6 +10,8 @@ const DIAGRAM_PAIR_GRID =
 const DIAGRAM_SIDE_CELL = "flex min-w-0 flex-col";
 const DIAGRAM_SIDE_CARD =
   "h-full w-full min-w-0 max-w-none max-sm:min-h-[14rem] max-sm:max-w-[14.75rem] max-sm:justify-self-center";
+const DIAGRAM_COMPARE_CARD =
+  "w-full min-w-0 max-w-none max-sm:max-w-[14.75rem] max-sm:justify-self-center";
 
 function MindmapStemDown({ tall }: { tall?: boolean }) {
   const h = tall ? 40 : 32;
@@ -428,7 +430,7 @@ export function WhyTransparencyLayers() {
                 title={layers.layersMindmapRealityHub}
                 subtitle={layers.layersMindmapRealitySub}
                 badge={layers.layersExampleTotal}
-                className="w-full max-w-[12.5rem] sm:max-w-sm"
+                className="w-full max-w-[14.75rem] sm:max-w-sm"
               />
               <p className="mt-3 max-w-md text-center text-xs text-muted-foreground sm:text-sm">
                 {layers.layersExampleSummary}
@@ -443,7 +445,7 @@ export function WhyTransparencyLayers() {
 
             <MindmapForkDown />
 
-            <div className={cn(DIAGRAM_PAIR_GRID, "lg:max-w-3xl")}>
+            <div className={cn(DIAGRAM_PAIR_GRID, "max-sm:items-start lg:max-w-3xl")}>
               <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-end")}>
                 <MindmapNode
                   compact
@@ -452,8 +454,7 @@ export function WhyTransparencyLayers() {
                   title={layers.layersCompareOthersTitle}
                   subtitle={layers.layersCompareOthersSub}
                   badge={layers.layersCompareOthersBadge}
-                  footer=""
-                  className={cn(DIAGRAM_SIDE_CARD, "sm:mr-4")}
+                  className={cn(DIAGRAM_COMPARE_CARD, "sm:mr-4")}
                 />
               </div>
               <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-start")}>
@@ -464,8 +465,7 @@ export function WhyTransparencyLayers() {
                   title={layers.layersCompareOpenBookTitle}
                   subtitle={layers.layersCompareOpenBookSub}
                   badge={layers.layersCompareOpenBookBadge}
-                  footer=""
-                  className={cn(DIAGRAM_SIDE_CARD, "sm:ml-4")}
+                  className={cn(DIAGRAM_COMPARE_CARD, "sm:ml-4")}
                 />
               </div>
             </div>
