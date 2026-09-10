@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { Container } from "@/shared/components/Container";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,7 @@ function MindmapForkDown() {
     <svg
       aria-hidden
       viewBox="0 0 400 56"
-      className="mx-auto h-14 w-full max-w-xl text-border"
+      className="mx-auto h-14 w-full text-border"
       preserveAspectRatio="xMidYMid meet"
     >
       <line
@@ -81,7 +81,7 @@ function MindmapMergeDown() {
     <svg
       aria-hidden
       viewBox="0 0 400 56"
-      className="mx-auto h-14 w-full max-w-xl text-border"
+      className="mx-auto h-14 w-full text-border"
       preserveAspectRatio="xMidYMid meet"
     >
       <line
@@ -253,6 +253,45 @@ function MindmapNode({
   );
 }
 
+function MindmapDiagramCanvas({
+  children,
+  ariaLabel,
+}: {
+  children: ReactNode;
+  ariaLabel: string;
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const centerHorizontally = () => {
+      el.scrollLeft = Math.max(0, (el.scrollWidth - el.clientWidth) / 2);
+    };
+
+    centerHorizontally();
+    window.addEventListener("resize", centerHorizontally);
+    return () => window.removeEventListener("resize", centerHorizontally);
+  }, []);
+
+  return (
+    <div className="relative -mx-3 sm:mx-0">
+      <div
+        ref={scrollRef}
+        className="overflow-x-auto overflow-y-visible [-webkit-overflow-scrolling:touch] sm:overflow-visible"
+        style={{ touchAction: "pan-x" }}
+        role="img"
+        aria-label={ariaLabel}
+      >
+        <div className="mx-auto w-max min-w-[34rem] max-w-none px-3 pb-2 pt-1 sm:w-full sm:min-w-0 sm:px-0">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MindmapLeaves({ items, muted }: { items: readonly string[]; muted?: boolean }) {
   return (
     <ul className="mt-3 space-y-1.5 text-left">
@@ -306,106 +345,109 @@ export function WhyTransparencyLayers() {
           </p>
         </aside>
 
-        <div
-          className="relative mt-8 sm:mt-10"
-          role="img"
-          aria-label={`${layers.layersGatewayLabel}: ${layers.layersExampleGateway}. ${layers.layersMindmapHiddenHub}: ${layers.layersExampleDirect}. ${layers.layersMindmapRealityHub}: ${layers.layersExampleTotal}. ${layers.layersCompareOthersTitle}: ${layers.layersCompareOthersBadge}. ${layers.layersCompareOpenBookTitle}: ${layers.layersCompareOpenBookBadge}. ${layers.layersExampleFootnote}`}
+        <div className="mt-8 sm:mt-10">
+        <MindmapDiagramCanvas
+          ariaLabel={`${layers.layersGatewayLabel}: ${layers.layersExampleGateway}. ${layers.layersMindmapHiddenHub}: ${layers.layersExampleDirect}. ${layers.layersMindmapRealityHub}: ${layers.layersExampleTotal}. ${layers.layersCompareOthersTitle}: ${layers.layersCompareOthersBadge}. ${layers.layersCompareOpenBookTitle}: ${layers.layersCompareOpenBookBadge}. ${layers.layersExampleFootnote}`}
         >
-          <svg aria-hidden className="absolute h-0 w-0 overflow-hidden">
-            <defs>
-              <marker
-                id="mindmap-arrow-gray"
-                markerWidth="5"
-                markerHeight="5"
-                refX="4"
-                refY="2.5"
-                orient="auto"
-                markerUnits="userSpaceOnUse"
-              >
-                <path d="M0,0 L5,2.5 L0,5 Z" fill="#a3a3a3" />
-              </marker>
-            </defs>
-          </svg>
+          <div className="relative">
+            <svg aria-hidden className="absolute h-0 w-0 overflow-hidden">
+              <defs>
+                <marker
+                  id="mindmap-arrow-gray"
+                  markerWidth="5"
+                  markerHeight="5"
+                  refX="4"
+                  refY="2.5"
+                  orient="auto"
+                  markerUnits="userSpaceOnUse"
+                >
+                  <path d="M0,0 L5,2.5 L0,5 Z" fill="#a3a3a3" />
+                </marker>
+              </defs>
+            </svg>
 
-          <div className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-6 lg:gap-10">
-            <div className="flex h-full w-full flex-col items-center sm:items-end">
-              <MindmapNode
-                variant="visible"
-                title={layers.layersGatewayLabel}
-                subtitle={layers.layersGatewayNote}
-                badge={layers.layersExampleGateway}
-                footer=""
-                className="sm:mr-4"
-              >
-                <MindmapLeaves items={layers.layersGatewayItems} />
-              </MindmapNode>
+            <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-6 lg:gap-10">
+              <div className="flex min-w-0 flex-col sm:items-end">
+                <MindmapNode
+                  variant="visible"
+                  title={layers.layersGatewayLabel}
+                  subtitle={layers.layersGatewayNote}
+                  badge={layers.layersExampleGateway}
+                  footer=""
+                  className="w-full max-w-none sm:mr-4"
+                >
+                  <MindmapLeaves items={layers.layersGatewayItems} />
+                </MindmapNode>
+              </div>
+
+              <div className="flex min-w-0 flex-col sm:items-start">
+                <MindmapNode
+                  variant="hidden"
+                  title={layers.layersMindmapHiddenHub}
+                  subtitle={layers.layersMindmapHiddenSub}
+                  badge={layers.layersExampleDirect}
+                  footer={layers.layersDirectNote}
+                  className="w-full max-w-none sm:ml-4"
+                >
+                  <MindmapLeaves items={layers.layersDirectItems} muted />
+                </MindmapNode>
+              </div>
             </div>
 
-            <div className="flex h-full w-full flex-col items-center sm:items-start">
-              <MindmapNode
-                variant="hidden"
-                title={layers.layersMindmapHiddenHub}
-                subtitle={layers.layersMindmapHiddenSub}
-                badge={layers.layersExampleDirect}
-                footer={layers.layersDirectNote}
-                className="sm:ml-4"
-              >
-                <MindmapLeaves items={layers.layersDirectItems} muted />
-              </MindmapNode>
-            </div>
-          </div>
+            <MindmapMergeDown />
 
-          <MindmapMergeDown />
-
-          <div className="flex flex-col items-center">
-            <MindmapNode
-              variant="reality"
-              title={layers.layersMindmapRealityHub}
-              subtitle={layers.layersMindmapRealitySub}
-              badge={layers.layersExampleTotal}
-            />
-            <p className="mt-3 max-w-md text-center text-xs text-muted-foreground sm:text-sm">
-              {layers.layersExampleSummary}
-            </p>
-          </div>
-
-          <MindmapStemDown />
-
-          <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:text-sm">
-            {layers.layersCompareTitle}
-          </p>
-
-          <MindmapForkDown />
-
-          <div className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-6 lg:mx-auto lg:max-w-3xl lg:gap-10">
-            <div className="flex h-full w-full flex-col items-center sm:items-end">
-              <MindmapNode
-                variant="visible"
-                logo="unknown"
-                title={layers.layersCompareOthersTitle}
-                subtitle={layers.layersCompareOthersSub}
-                badge={layers.layersCompareOthersBadge}
-                className="sm:mr-4"
-              />
-            </div>
-            <div className="flex h-full w-full flex-col items-center sm:items-start">
+            <div className="flex flex-col items-center">
               <MindmapNode
                 variant="reality"
-                logo="openbook"
-                title={layers.layersCompareOpenBookTitle}
-                subtitle={layers.layersCompareOpenBookSub}
-                badge={layers.layersCompareOpenBookBadge}
-                className="sm:ml-4"
+                title={layers.layersMindmapRealityHub}
+                subtitle={layers.layersMindmapRealitySub}
+                badge={layers.layersExampleTotal}
+                className="w-full max-w-sm"
               />
+              <p className="mt-3 max-w-md text-center text-xs text-muted-foreground sm:text-sm">
+                {layers.layersExampleSummary}
+              </p>
             </div>
-          </div>
 
-          <p className="mt-6 text-center text-xs text-muted-foreground sm:mt-8 sm:text-sm">
-            {layers.layersExampleFootnote}
-          </p>
+            <MindmapStemDown />
+
+            <p className="text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:text-sm">
+              {layers.layersCompareTitle}
+            </p>
+
+            <MindmapForkDown />
+
+            <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-6 lg:mx-auto lg:max-w-3xl lg:gap-10">
+              <div className="flex min-w-0 flex-col sm:items-end">
+                <MindmapNode
+                  variant="visible"
+                  logo="unknown"
+                  title={layers.layersCompareOthersTitle}
+                  subtitle={layers.layersCompareOthersSub}
+                  badge={layers.layersCompareOthersBadge}
+                  className="w-full max-w-none sm:mr-4"
+                />
+              </div>
+              <div className="flex min-w-0 flex-col sm:items-start">
+                <MindmapNode
+                  variant="reality"
+                  logo="openbook"
+                  title={layers.layersCompareOpenBookTitle}
+                  subtitle={layers.layersCompareOpenBookSub}
+                  badge={layers.layersCompareOpenBookBadge}
+                  className="w-full max-w-none sm:ml-4"
+                />
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-xs text-muted-foreground sm:mt-8 sm:text-sm">
+              {layers.layersExampleFootnote}
+            </p>
+          </div>
+        </MindmapDiagramCanvas>
         </div>
 
-        <div className="mx-auto mt-12 max-w-3xl border-t-2 border-border pt-12 sm:mt-16 sm:pt-16">
+        <div className="relative mx-auto mt-8 max-w-3xl border-t-2 border-border pt-8 sm:mt-16 sm:pt-16">
           <p className="text-eyebrow text-accent">{layers.layersSolutionEyebrow}</p>
           <h3 className="mt-3 text-2xl leading-snug tracking-tight text-navy sm:text-3xl">
             {layers.layersSolutionTitle}
