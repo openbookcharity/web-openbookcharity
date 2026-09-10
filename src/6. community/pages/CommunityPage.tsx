@@ -9,10 +9,10 @@ export function CommunityPage() {
   return (
     <PageLayout>
       <CommunityVolunteer />
-      <section className="flex-1 border-t border-border bg-muted py-6 sm:py-8">
-        <Container className="space-y-8">
+      <section className="flex-1 border-t border-border bg-muted py-2 sm:py-8">
+        <Container className="space-y-4 sm:space-y-8">
           <CommunityGroups />
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-4 sm:gap-8 lg:grid-cols-2">
             <CommunityDirectory />
             <CommunityForum />
           </div>

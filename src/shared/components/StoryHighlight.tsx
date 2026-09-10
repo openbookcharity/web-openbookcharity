@@ -25,7 +25,7 @@ export function StoryHighlight({
   className?: string;
 }) {
   return (
-    <section className={className ?? "py-4 sm:py-12"}>
+    <section className={className ?? "py-2 sm:py-12"}>
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
@@ -33,16 +33,16 @@ export function StoryHighlight({
           description={description}
           align="center"
         />
-        <div className="mt-4 grid gap-3 sm:mt-6 md:grid-cols-3">
+        <div className="mt-4 grid gap-1.5 sm:mt-6 sm:gap-3 md:grid-cols-3">
           {stories.map((story) => (
             <figure
               key={story.name}
-              className="rounded-2xl border border-border bg-card p-4 shadow-soft"
+              className="rounded-2xl border border-border bg-card px-3 py-3 shadow-soft sm:p-4"
             >
               <blockquote className="font-display text-base leading-snug text-navy">
                 “{story.quote}”
               </blockquote>
-              <figcaption className="mt-4 text-sm">
+              <figcaption className="mt-2 text-sm sm:mt-4">
                 <span className="block font-semibold text-navy">{story.name}</span>
                 <span className="block text-muted-foreground">{story.role}</span>
               </figcaption>

@@ -6,7 +6,7 @@ export function WhyProblem() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-muted py-8 sm:py-20">
+    <section className="bg-muted py-2 sm:py-20">
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
@@ -20,11 +20,11 @@ export function WhyProblem() {
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {m.why.problemP2}
             </p>
-            <figure className="mt-10 rounded-2xl bg-navy px-6 py-10 text-navy-foreground sm:px-10 sm:py-12">
-              <blockquote className="font-display text-2xl leading-snug tracking-tight">
+            <figure className="mt-6 rounded-2xl bg-navy px-3 py-4 text-navy-foreground sm:mt-10 sm:px-10 sm:py-12">
+              <blockquote className="font-display text-xl leading-snug tracking-tight sm:text-2xl">
                 {m.why.problemQuote}
               </blockquote>
-              <p className="mt-5 text-base leading-relaxed text-navy-foreground/80">
+              <p className="mt-3 text-base leading-relaxed text-navy-foreground/80 sm:mt-5">
                 {m.why.problemQuoteBody}
               </p>
             </figure>

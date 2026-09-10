@@ -5,7 +5,7 @@ export function PlatformModules() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border bg-secondary/8 py-8 sm:py-20">
+    <section className="border-t border-border bg-secondary/8 py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.platform.modulesEyebrow}</p>
@@ -14,11 +14,16 @@ export function PlatformModules() {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-1.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {m.platform.modules.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-border bg-card p-5">
-              <h3 className="text-xl text-navy">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+            <article
+              key={item.title}
+              className="rounded-2xl border border-border bg-card px-3 py-3 sm:p-5"
+            >
+              <h3 className="text-lg text-navy sm:text-xl">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3">
+                {item.body}
+              </p>
             </article>
           ))}
         </div>

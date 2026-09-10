@@ -6,18 +6,27 @@ export function WhyCta() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-background py-8 sm:py-20">
+    <section className="bg-background py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <h2 className="text-3xl tracking-tight text-navy sm:text-4xl">{m.why.ctaTitle}</h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {m.why.ctaBody}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <CtaButton to="/partner" size="lg">
+          <div className="mt-8 flex flex-nowrap items-center gap-2 sm:flex-wrap sm:gap-4">
+            <CtaButton
+              to="/partner"
+              size="lg"
+              className="h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base"
+            >
               {m.why.ctaRaiseFunds}
             </CtaButton>
-            <CtaButton to="/about" size="lg" variant="outline">
+            <CtaButton
+              to="/about"
+              size="lg"
+              variant="outline"
+              className="h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base"
+            >
               {m.why.readStory}
             </CtaButton>
           </div>

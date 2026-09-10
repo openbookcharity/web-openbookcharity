@@ -5,7 +5,7 @@ export function PlatformFlow() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border py-8 sm:py-20">
+    <section className="border-t border-border py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.platform.flowEyebrow}</p>
@@ -17,12 +17,17 @@ export function PlatformFlow() {
           </p>
         </div>
 
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-6 grid gap-1.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5">
           {m.platform.steps.map((step) => (
-            <li key={step.n} className="rounded-2xl border border-border bg-card p-5">
-              <p className="font-display text-lg text-accent">{step.n}</p>
-              <h3 className="mt-3 text-lg text-navy">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
+            <li
+              key={step.n}
+              className="rounded-2xl border border-border bg-card px-3 py-3 sm:p-5"
+            >
+              <p className="font-display text-base text-accent sm:text-lg">{step.n}</p>
+              <h3 className="mt-2 text-base text-navy sm:mt-3 sm:text-lg">{step.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3">
+                {step.body}
+              </p>
             </li>
           ))}
         </ol>

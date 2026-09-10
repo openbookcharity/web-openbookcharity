@@ -34,16 +34,21 @@ function FunnelCard({
         tone={isNavy ? "navy" : "light"}
         className="min-h-[160px] rounded-none border-x-0 border-t-0 bg-background lg:min-h-[180px]"
       />
-      <div className="bg-background p-5 sm:p-6">
+      <div className="bg-background px-3 py-3 sm:p-6">
         <p className={cn("text-eyebrow", isNavy ? "text-navy-foreground/55" : "text-accent")}>
           {step.n} · {step.eyebrow}
         </p>
-        <h3 className={cn("mt-3 text-2xl", isNavy ? "text-navy-foreground" : "text-navy")}>
+        <h3
+          className={cn(
+            "mt-2 text-lg sm:mt-3 sm:text-2xl",
+            isNavy ? "text-navy-foreground" : "text-navy",
+          )}
+        >
           {step.title}
         </h3>
         <p
           className={cn(
-            "mt-3 text-base leading-relaxed",
+            "mt-2 text-sm leading-relaxed sm:mt-3 sm:text-base",
             isNavy ? "text-navy-foreground/80" : "text-muted-foreground",
           )}
         >
@@ -59,7 +64,7 @@ export function WhyAudience() {
   const steps = m.why.funnel;
 
   return (
-    <section className="bg-background py-8 sm:py-20">
+    <section className="bg-background py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.why.audienceEyebrow}</p>
@@ -87,7 +92,7 @@ export function WhyAudience() {
 
       <Carousel
         opts={{ align: "start", loop: false }}
-        className="mt-8 w-full max-w-full overflow-x-clip lg:mx-auto lg:max-w-[84rem]"
+        className="mt-6 w-full max-w-full sm:mt-8 lg:mx-auto lg:max-w-[84rem]"
       >
         <CarouselContent className="ml-0 pl-2">
           {steps.map((step, index) => (

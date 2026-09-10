@@ -50,7 +50,7 @@ function VolunteerSlider({
   if (count === 0) return null;
 
   return (
-    <div className="relative h-[220px] w-full min-w-0 sm:h-[260px]">
+    <div className="relative h-[180px] w-full min-w-0 sm:h-[260px]">
       {photos.map((photo, index) => {
         const offset = (index - active + count) % count;
         const isCenter = offset === 0;
@@ -92,9 +92,9 @@ export function CommunityVolunteer() {
   const { m } = useI18n();
 
   return (
-    <section className="border-b border-border bg-background py-6 sm:py-8">
+    <section className="border-b border-border bg-background py-2 sm:py-8">
       <Container>
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="grid items-center gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-8">
           <div>
             <p className="text-eyebrow text-navy/55">{m.community.eyebrow}</p>
             <h1 className="mt-2 font-display text-2xl leading-snug tracking-tight text-navy sm:text-3xl">
@@ -103,17 +103,25 @@ export function CommunityVolunteer() {
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
               {m.community.volunteerBody}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-nowrap items-center gap-2 sm:flex-wrap">
               <a
                 href={COMMUNITY_SETTINGS.groupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(ctaVariants({ variant: "solid", size: "md" }), "h-10 px-5")}
+                className={cn(
+                  ctaVariants({ variant: "solid", size: "md" }),
+                  "h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base",
+                )}
               >
                 <CircleUser className="size-4" />
                 {m.community.volunteerJoin}
               </a>
-              <CtaButton to="/program" size="md" variant="outline" className="h-10 px-5">
+              <CtaButton
+                to="/program"
+                size="md"
+                variant="outline"
+                className="h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base"
+              >
                 <span className="inline-flex size-4 items-center justify-center rounded-sm border-2 border-current">
                   <Play className="size-2 fill-current" />
                 </span>

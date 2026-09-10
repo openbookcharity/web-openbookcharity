@@ -14,7 +14,7 @@ export function WhyGallery() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-muted py-6 sm:py-12">
+    <section className="bg-muted py-2 sm:py-12">
       <Carousel opts={{ align: "start", loop: false }} className="w-full max-w-full overflow-x-clip">
         <Container>
           <div className="flex items-end justify-between gap-4">

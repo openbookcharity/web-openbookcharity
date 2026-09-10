@@ -62,7 +62,7 @@ export function HomePrograms({ linked = true }: { linked?: boolean }) {
   const { m } = useI18n();
 
   return (
-    <section className="bg-secondary/10 py-4 sm:py-8">
+    <section className="bg-secondary/10 py-2 sm:py-8">
       <Container>
         <div className="max-w-2xl">
           <p className="text-eyebrow text-accent">{m.nav.platform}</p>
@@ -71,7 +71,7 @@ export function HomePrograms({ linked = true }: { linked?: boolean }) {
         </div>
       </Container>
 
-      <Carousel opts={{ align: "start", loop: false }} className="mt-4 w-full max-w-full overflow-x-clip md:hidden">
+      <Carousel opts={{ align: "start", loop: false }} className="mt-4 w-full max-w-full md:hidden">
         <CarouselContent className="ml-0">
           {m.home.programs.map((program) => (
             <CarouselItem key={program.id} className="basis-[calc((100%-0.5rem)*8/9)] pl-0 pr-2">

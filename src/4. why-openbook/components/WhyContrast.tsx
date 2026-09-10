@@ -5,7 +5,7 @@ export function WhyContrast() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-accent/10 py-8 sm:py-20">
+    <section className="bg-accent/10 py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.why.contrastEyebrow}</p>
@@ -17,22 +17,22 @@ export function WhyContrast() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
-          <div className="bg-card p-6 sm:p-8">
+        <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:mt-10 md:grid-cols-2">
+          <div className="bg-card px-3 py-3 sm:p-8">
             <p className="text-eyebrow text-muted-foreground">{m.why.without}</p>
-            <ul className="mt-6 space-y-5">
+            <ul className="mt-3 space-y-2 sm:mt-6 sm:space-y-5">
               {m.why.contrast.map((row) => (
-                <li key={row.old} className="text-base leading-relaxed text-muted-foreground">
+                <li key={row.old} className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {row.old}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-navy p-6 text-navy-foreground sm:p-8">
+          <div className="bg-navy px-3 py-3 text-navy-foreground sm:p-8">
             <p className="text-eyebrow text-navy-foreground/55">{m.why.with}</p>
-            <ul className="mt-6 space-y-5">
+            <ul className="mt-3 space-y-2 sm:mt-6 sm:space-y-5">
               {m.why.contrast.map((row) => (
-                <li key={row.now} className="text-base leading-relaxed text-navy-foreground/90">
+                <li key={row.now} className="text-sm leading-relaxed text-navy-foreground/90 sm:text-base">
                   {row.now}
                 </li>
               ))}

@@ -31,11 +31,20 @@ export function HomeHero() {
             {m.home.heroDescription}
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-4">
-            <CtaButton to="/program" size="lg">
+          <div className="mt-9 flex flex-nowrap items-center gap-2 sm:flex-wrap sm:gap-4">
+            <CtaButton
+              to="/program"
+              size="lg"
+              className="h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base"
+            >
               {m.common.donateNow}
             </CtaButton>
-            <CtaButton to="/program" size="lg" variant="outline">
+            <CtaButton
+              to="/program"
+              size="lg"
+              variant="outline"
+              className="h-10 shrink-0 px-3.5 text-xs sm:h-14 sm:px-8 sm:text-base"
+            >
               {m.common.seePlatform}
             </CtaButton>
           </div>

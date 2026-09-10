@@ -5,7 +5,7 @@ export function AboutVisionMission() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-muted py-8 sm:py-20">
+    <section className="bg-muted py-2 sm:py-20">
       <Container>
         <p className="text-eyebrow text-accent">{m.about.direction}</p>
 
@@ -21,12 +21,17 @@ export function AboutVisionMission() {
 
         <div className="mt-10">
           <p className="text-eyebrow text-accent">{m.about.mission}</p>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-1.5 sm:gap-4 md:grid-cols-3">
             {m.about.missions.map((item, index) => (
-              <article key={item.title} className="rounded-2xl border border-border bg-card p-5">
-                <p className="font-display text-lg text-accent">{index + 1}</p>
-                <h3 className="mt-3 text-xl text-navy">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+              <article
+                key={item.title}
+                className="rounded-2xl border border-border bg-card px-3 py-3 sm:p-5"
+              >
+                <p className="font-display text-base text-accent sm:text-lg">{index + 1}</p>
+                <h3 className="mt-2 text-lg text-navy sm:mt-3 sm:text-xl">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>

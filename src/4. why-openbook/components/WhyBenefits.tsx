@@ -5,7 +5,7 @@ export function WhyBenefits() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-background py-8 sm:py-20">
+    <section className="bg-background py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.why.benefitsEyebrow}</p>
@@ -17,12 +17,15 @@ export function WhyBenefits() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-1.5 sm:mt-10 sm:grid-cols-2 sm:gap-4">
           {m.why.benefits.map((item) => (
-            <article key={item.n} className="rounded-2xl border border-border bg-card p-5 sm:p-6">
-              <p className="font-display text-lg text-accent">{item.n}</p>
-              <h3 className="mt-3 text-xl text-navy">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <article
+              key={item.n}
+              className="rounded-2xl border border-border bg-card px-3 py-3 sm:p-6"
+            >
+              <p className="font-display text-base text-accent sm:text-lg">{item.n}</p>
+              <h3 className="mt-2 text-lg text-navy sm:mt-3 sm:text-xl">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3 sm:text-base">
                 {item.body}
               </p>
             </article>

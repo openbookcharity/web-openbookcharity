@@ -7,7 +7,7 @@ export function PlatformAudience() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border py-8 sm:py-20">
+    <section className="border-t border-border py-2 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <p className="text-eyebrow text-accent">{m.platform.sidesEyebrow}</p>
@@ -19,7 +19,7 @@ export function PlatformAudience() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-1.5 sm:mt-10 sm:gap-4 md:grid-cols-2">
           <article className="overflow-hidden rounded-2xl border border-border bg-card">
             <PhotoFrame
               src={PLATFORM_DONOR_PHOTO}
@@ -27,10 +27,10 @@ export function PlatformAudience() {
               hint={m.platform.donorHint}
               className="min-h-0 aspect-[16/10] rounded-none border-x-0 border-t-0 lg:min-h-0"
             />
-            <div className="p-5 sm:p-6">
+            <div className="px-3 py-3 sm:p-6">
               <p className="text-eyebrow text-accent">{m.platform.donorEyebrow}</p>
-              <h3 className="mt-3 text-2xl text-navy">{m.platform.donorTitle}</h3>
-              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h3 className="mt-2 text-lg text-navy sm:mt-3 sm:text-2xl">{m.platform.donorTitle}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3 sm:text-base">
                 {m.platform.donorBody}
               </p>
             </div>
@@ -44,10 +44,10 @@ export function PlatformAudience() {
               tone="navy"
               className="min-h-0 aspect-[16/10] rounded-none border-x-0 border-t-0 lg:min-h-0"
             />
-            <div className="p-5 sm:p-6">
+            <div className="px-3 py-3 sm:p-6">
               <p className="text-eyebrow text-navy-foreground/55">{m.platform.orgEyebrow}</p>
-              <h3 className="mt-3 text-2xl">{m.platform.orgTitle}</h3>
-              <p className="mt-3 text-base leading-relaxed text-navy-foreground/80">
+              <h3 className="mt-2 text-lg sm:mt-3 sm:text-2xl">{m.platform.orgTitle}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy-foreground/80 sm:mt-3 sm:text-base">
                 {m.platform.orgBody}
               </p>
             </div>
