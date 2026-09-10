@@ -12,8 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CommunityRouteImport } from './routes/community'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as KonfirmasiRouteImport } from './routes/konfirmasi'
 import { Route as PartnerRouteImport } from './routes/partner'
-import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as ProgramRouteImport } from './routes/program'
+import { Route as RekeningRouteImport } from './routes/rekening'
 import { Route as WhyOpenbookRouteImport } from './routes/why-openbook'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,14 +34,29 @@ const CommunityRoute = CommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KonfirmasiRoute = KonfirmasiRouteImport.update({
+  id: '/konfirmasi',
+  path: '/konfirmasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PartnerRoute = PartnerRouteImport.update({
   id: '/partner',
   path: '/partner',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlatformRoute = PlatformRouteImport.update({
-  id: '/platform',
-  path: '/platform',
+const ProgramRoute = ProgramRouteImport.update({
+  id: '/program',
+  path: '/program',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RekeningRoute = RekeningRouteImport.update({
+  id: '/rekening',
+  path: '/rekening',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WhyOpenbookRoute = WhyOpenbookRouteImport.update({
@@ -51,16 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
+  '/faq': typeof FaqRoute
+  '/konfirmasi': typeof KonfirmasiRoute
   '/partner': typeof PartnerRoute
-  '/platform': typeof PlatformRoute
+  '/program': typeof ProgramRoute
+  '/rekening': typeof RekeningRoute
   '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
+  '/faq': typeof FaqRoute
+  '/konfirmasi': typeof KonfirmasiRoute
   '/partner': typeof PartnerRoute
-  '/platform': typeof PlatformRoute
+  '/program': typeof ProgramRoute
+  '/rekening': typeof RekeningRoute
   '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRoutesById {
@@ -68,23 +92,46 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
+  '/faq': typeof FaqRoute
+  '/konfirmasi': typeof KonfirmasiRoute
   '/partner': typeof PartnerRoute
-  '/platform': typeof PlatformRoute
+  '/program': typeof ProgramRoute
+  '/rekening': typeof RekeningRoute
   '/why-openbook': typeof WhyOpenbookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/community' | '/partner' | '/platform' | '/why-openbook'
+    | '/'
+    | '/about'
+    | '/community'
+    | '/faq'
+    | '/konfirmasi'
+    | '/partner'
+    | '/program'
+    | '/rekening'
+    | '/why-openbook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/community' | '/partner' | '/platform' | '/why-openbook'
+  to:
+    | '/'
+    | '/about'
+    | '/community'
+    | '/faq'
+    | '/konfirmasi'
+    | '/partner'
+    | '/program'
+    | '/rekening'
+    | '/why-openbook'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/community'
+    | '/faq'
+    | '/konfirmasi'
     | '/partner'
-    | '/platform'
+    | '/program'
+    | '/rekening'
     | '/why-openbook'
   fileRoutesById: FileRoutesById
 }
@@ -92,8 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CommunityRoute: typeof CommunityRoute
+  FaqRoute: typeof FaqRoute
+  KonfirmasiRoute: typeof KonfirmasiRoute
   PartnerRoute: typeof PartnerRoute
-  PlatformRoute: typeof PlatformRoute
+  ProgramRoute: typeof ProgramRoute
+  RekeningRoute: typeof RekeningRoute
   WhyOpenbookRoute: typeof WhyOpenbookRoute
 }
 
@@ -120,6 +170,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/konfirmasi': {
+      id: '/konfirmasi'
+      path: '/konfirmasi'
+      fullPath: '/konfirmasi'
+      preLoaderRoute: typeof KonfirmasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/partner': {
       id: '/partner'
       path: '/partner'
@@ -127,11 +191,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/platform': {
-      id: '/platform'
-      path: '/platform'
-      fullPath: '/platform'
-      preLoaderRoute: typeof PlatformRouteImport
+    '/program': {
+      id: '/program'
+      path: '/program'
+      fullPath: '/program'
+      preLoaderRoute: typeof ProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rekening': {
+      id: '/rekening'
+      path: '/rekening'
+      fullPath: '/rekening'
+      preLoaderRoute: typeof RekeningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/why-openbook': {
@@ -148,8 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CommunityRoute: CommunityRoute,
+  FaqRoute: FaqRoute,
+  KonfirmasiRoute: KonfirmasiRoute,
   PartnerRoute: PartnerRoute,
-  PlatformRoute: PlatformRoute,
+  ProgramRoute: ProgramRoute,
+  RekeningRoute: RekeningRoute,
   WhyOpenbookRoute: WhyOpenbookRoute,
 }
 export const routeTree = rootRouteImport

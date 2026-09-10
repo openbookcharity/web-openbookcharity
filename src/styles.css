@@ -183,12 +183,3 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
-@utility bg-hero-wash {
-  background-image: radial-gradient(
-      110% 80% at 85% 0%,
-      oklch(0.48 0.16 255 / 0.16) 0%,
-      transparent 60%
-    ),
-    radial-gradient(70% 60% at 5% 10%, oklch(0.57 0.22 25 / 0.12) 0%, transparent 65%);
-}

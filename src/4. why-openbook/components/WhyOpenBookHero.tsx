@@ -6,7 +6,7 @@ export function WhyOpenBookHero() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-hero-wash py-8 sm:py-20">
+    <section className="bg-background py-8 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
           <div>
@@ -18,10 +18,10 @@ export function WhyOpenBookHero() {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{m.why.p2}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <CtaButton to="/partner" size="lg">
-                {m.common.raiseFunds}
+                {m.why.heroRaiseFunds}
               </CtaButton>
-              <CtaButton to="/platform" size="lg" variant="outline">
-                {m.common.seePlatform}
+              <CtaButton to="/program" size="lg" variant="outline">
+                {m.why.heroSeeProgram}
               </CtaButton>
             </div>
           </div>

@@ -9,6 +9,7 @@ import { ProjectsGridSkeleton } from "../skeletons/ProjectCardSkeleton";
 import { fundedLabel, healthTone, raisedLabel, type HomeProject } from "../utils/projectMetrics";
 import { percent } from "../utils/format";
 import { cn } from "@/lib/utils";
+import { HOME_PROJECT_PHOTOS } from "../photos";
 
 function ProjectCard({
   project,
@@ -33,6 +34,7 @@ function ProjectCard({
       )}
     >
       <PhotoFrame
+        src={HOME_PROJECT_PHOTOS[project.id]}
         caption={m.home.photoProgram}
         hint={title}
         className="min-h-0 aspect-[16/10] rounded-none border-x-0 border-t-0 lg:min-h-0"

@@ -1,26 +1,26 @@
 export const WHY_SETTINGS = {
   stats: [
     { value: "22.000+", label: "Program terbantu" },
-    { value: "38", label: "Negara terjangkau" },
+    { value: "12+", label: "Kota di Indonesia" },
     { value: "94%", label: "Dana ke lapangan" },
     { value: "6 hari", label: "Waktu laporan" },
   ],
   contrast: [
     {
-      old: "Donasi masuk ke dana umum yang kabur. Tidak ada yang tahu pos mana yang terisi.",
-      now: "Setiap penggalangan adalah kegiatan nyata dengan biaya yang jelas sampai rupiah terakhir.",
+      old: "Uang masuk, tapi tidak jelas dipakai untuk apa.",
+      now: "Tiap program punya rincian biaya. Anda tahu uang dipakai untuk apa.",
     },
     {
-      old: "Laporan datang setahun sekali, kalau datang. PDF panjang yang jarang dibuka.",
-      now: "Dampak dilaporkan lewat video dan catatan yang sama, biasanya dalam 6 hari.",
+      old: "Laporan jarang datang. Kalau ada, panjang dan jarang dibaca.",
+      now: "Update lewat video, biasanya dalam 6 hari. Bisa dibuka kapan saja.",
     },
     {
-      old: "Yang memberi bungkam. Tidak ada wadah untuk bertanya, tidak ada jejak untuk dicek.",
-      now: "Donatur melihat, mengikuti, dan memastikan dana sampai. Pertanyaan punya jawaban.",
+      old: "Sulit bertanya. Tidak ada catatan yang bisa dicek.",
+      now: "Anda bisa lihat alurnya dan yakin uang sampai ke penerima.",
     },
     {
-      old: "Kepercayaan diminta dengan ucapan manis di atas panggung.",
-      now: "Kepercayaan dibuktikan: skor laporan, aliran dana, dan bukti dari lapangan terlihat bersama.",
+      old: "Kepercayaan diminta lewat janji saja.",
+      now: "Kepercayaan dibuktikan lewat catatan uang dan bukti dari lapangan.",
     },
   ],
   benefits: [
@@ -45,5 +45,5 @@ export const WHY_SETTINGS = {
       body: "Skor langsung menunjukkan seberapa rajin mitra melaporkan pekerjaan yang sudah dibantu. Rekam jejak tidak bisa disembunyikan di balik ringkasan.",
     },
   ],
-  funnel: [{ tone: "light" }, { tone: "navy" }, { tone: "sand" }],
+  funnel: [{ tone: "light" }, { tone: "light" }, { tone: "sand" }],
 } as const;

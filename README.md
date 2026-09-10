@@ -10,10 +10,13 @@ Each page lives in a numbered folder under `src/`. Shared UI (header, footer, la
 src/
   1. home/           Home page and its sections, hooks, settings
   2. about/          About page
-  3. platform/       Platform page
+  3. platform/       Program page
   4. why-openbook/   Why OpenBook page
   5. partner/        Partner page
   6. community/      Community page
+  7. rekening/       Donation accounts page
+  8. faq/            FAQ page
+  9. konfirmasi/     Donation confirmation page
   shared/            Cross-page layout, nav, StoryHighlight
   routes/            File-based route definitions
   components/ui/     shadcn primitives

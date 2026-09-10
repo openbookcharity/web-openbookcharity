@@ -6,7 +6,7 @@ export function AboutCta() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border py-8 sm:py-20">
+    <section className="bg-background py-8 sm:py-20">
       <Container>
         <div className="max-w-3xl">
           <h2 className="text-3xl tracking-tight text-navy sm:text-4xl">
@@ -17,7 +17,7 @@ export function AboutCta() {
           </p>
           <div className="mt-8">
             <CtaButton to="/partner" size="lg">
-              {m.common.raiseFunds}
+              {m.about.ctaButton}
             </CtaButton>
           </div>
         </div>

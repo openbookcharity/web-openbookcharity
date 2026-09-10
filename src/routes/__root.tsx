@@ -15,6 +15,14 @@ import { WhatsAppButton } from "@/shared/components/WhatsAppButton";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
+  return (
+    <LanguageProvider>
+      <NotFoundBody />
+    </LanguageProvider>
+  );
+}
+
+function NotFoundBody() {
   const { m } = useI18n();
 
   return (
@@ -37,6 +45,14 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+  return (
+    <LanguageProvider>
+      <ErrorBody error={error} reset={reset} />
+    </LanguageProvider>
+  );
+}
+
+function ErrorBody({ error, reset }: { error: Error; reset: () => void }) {
   const { m } = useI18n();
   console.error(error);
   const router = useRouter();
@@ -142,9 +158,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Outlet />
-      <WhatsAppButton />
-    </QueryClientProvider>
+    <LanguageProvider>
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+        <WhatsAppButton />
+      </QueryClientProvider>
+    </LanguageProvider>
   );
 }

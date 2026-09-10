@@ -25,6 +25,7 @@ export function AboutPage() {
       <AboutVisionMission />
       <AboutPromises />
       <StoryHighlight
+        className="bg-muted py-8 sm:py-20"
         eyebrow={m.home.storiesEyebrow}
         title={m.about.storiesTitle}
         description={m.about.storiesDescription}

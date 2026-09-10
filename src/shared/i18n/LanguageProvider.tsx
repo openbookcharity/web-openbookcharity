@@ -1,16 +1,8 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { messages, type Lang, type Messages } from "./messages";
+import { useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { messages, type Lang } from "./messages";
+import { LanguageContext, type LanguageContextValue } from "./language-context";
 
 const STORAGE_KEY = "obc-lang";
-
-type LanguageContextValue = {
-  lang: Lang;
-  locale: string;
-  setLang: (lang: Lang) => void;
-  m: Messages;
-};
-
-const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function isLang(value: string | null): value is Lang {
   return value === "id" || value === "en";
@@ -19,6 +11,13 @@ function isLang(value: string | null): value is Lang {
 function localeOf(lang: Lang) {
   return lang === "en" ? "en-US" : "id-ID";
 }
+
+const fallback: LanguageContextValue = {
+  lang: "id",
+  locale: "id-ID",
+  setLang: () => {},
+  m: messages.id,
+};
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("id");
@@ -53,7 +52,5 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 }
 
 export function useI18n() {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useI18n must be used within LanguageProvider");
-  return ctx;
+  return useContext(LanguageContext) ?? fallback;
 }

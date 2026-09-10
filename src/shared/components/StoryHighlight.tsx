@@ -16,14 +16,16 @@ export function StoryHighlight({
   title,
   description,
   stories,
+  className,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   stories: StoryItem[];
+  className?: string;
 }) {
   return (
-    <section className="py-4 sm:py-12">
+    <section className={className ?? "py-4 sm:py-12"}>
       <Container>
         <SectionHeading
           eyebrow={eyebrow}

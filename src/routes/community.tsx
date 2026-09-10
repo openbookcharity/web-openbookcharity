@@ -3,7 +3,7 @@ import { CommunityPage } from "@/6. community/pages/CommunityPage";
 
 const title = "Community | OpenBook Charity";
 const description =
-  "Community OpenBook Charity: orang yang memberi, yang menggalang, dan yang dibantu, di satu catatan yang bisa dibuka.";
+  "Bantu lebih banyak sebagai relawan OpenBook Charity. Selain donasi, ikut program dan kegiatan secara langsung.";
 
 export const Route = createFileRoute("/community")({
   head: () => ({

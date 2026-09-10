@@ -1,6 +1,7 @@
 import { Container } from "@/shared/components/Container";
 import { PhotoFrame } from "@/shared/components/PhotoFrame";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { HOME_GALLERY_PHOTOS } from "../photos";
 import {
   Carousel,
   CarouselContent,
@@ -32,12 +33,13 @@ export function HomeGallery() {
 
         <div className="lg:mx-auto lg:max-w-[84rem] lg:px-12">
           <CarouselContent className="mt-5 ml-0">
-            {m.home.gallerySlides.map((slide) => (
+            {m.home.gallerySlides.map((slide, index) => (
               <CarouselItem
                 key={slide.caption}
                 className="basis-full pl-0 pr-0 sm:basis-[42%] sm:pr-3 lg:basis-[30%] last:pr-0"
               >
                 <PhotoFrame
+                src={HOME_GALLERY_PHOTOS[index] ?? HOME_GALLERY_PHOTOS[0]}
                   caption={slide.caption}
                   hint={slide.hint}
                   className="min-h-0 aspect-[16/10] rounded-none sm:rounded-xl lg:min-h-0"

@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/1. home/pages/HomePage";
 
-const title = "OpenBook Charity | Lihat donasi sampai ke penerima";
+const title = "OpenBook Charity | Pastikan donasimu tepat sasaran";
 const description =
-  "OpenBook Charity tempat berdonasi dengan catatan yang bisa dibuka. Pilih program, beri, lalu lihat dananya sampai.";
+  "Salurkan donasimu ke program terpilih dan pantau penyalurannya secara nyata, dari awal hingga diterima.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

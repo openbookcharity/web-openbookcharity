@@ -1,6 +1,7 @@
 import { Container } from "@/shared/components/Container";
 import { PhotoFrame } from "@/shared/components/PhotoFrame";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { PLATFORM_DONOR_PHOTO, PLATFORM_ORG_PHOTO } from "../photos";
 
 export function PlatformAudience() {
   const { m } = useI18n();
@@ -21,6 +22,7 @@ export function PlatformAudience() {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           <article className="overflow-hidden rounded-2xl border border-border bg-card">
             <PhotoFrame
+              src={PLATFORM_DONOR_PHOTO}
               caption={m.platform.donorCaption}
               hint={m.platform.donorHint}
               className="min-h-0 aspect-[16/10] rounded-none border-x-0 border-t-0 lg:min-h-0"
@@ -36,6 +38,7 @@ export function PlatformAudience() {
 
           <article className="overflow-hidden rounded-2xl bg-navy text-navy-foreground">
             <PhotoFrame
+              src={PLATFORM_ORG_PHOTO}
               caption={m.platform.orgCaption}
               hint={m.platform.orgHint}
               tone="navy"

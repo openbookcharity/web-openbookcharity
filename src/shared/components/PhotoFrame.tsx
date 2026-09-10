@@ -9,7 +9,7 @@ export function PhotoFrame({
   tone = "light",
   className,
 }: {
-  src?: string;
+  src?: string | undefined;
   alt?: string;
   caption: string;
   hint: string;
@@ -22,10 +22,14 @@ export function PhotoFrame({
     <div>
       <div
         className={cn(
-          "relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-2xl border border-dashed lg:min-h-[280px]",
-          isNavy
-            ? "border-navy-foreground/25 bg-navy-foreground/8"
-            : "border-navy/20 bg-muted",
+          "relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-2xl border lg:min-h-[280px]",
+          src
+            ? isNavy
+              ? "border-navy-foreground/25 bg-navy-foreground/8"
+              : "border-border bg-muted"
+            : isNavy
+              ? "border-dashed border-navy-foreground/25 bg-navy-foreground/8"
+              : "border-dashed border-navy/20 bg-muted",
           className,
         )}
       >

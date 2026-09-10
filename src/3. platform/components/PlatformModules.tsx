@@ -12,9 +12,6 @@ export function PlatformModules() {
           <h2 className="mt-3 text-3xl leading-snug tracking-tight text-navy sm:text-4xl">
             {m.platform.modulesTitle}
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {m.platform.modulesIntro}
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

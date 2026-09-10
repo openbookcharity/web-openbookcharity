@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { PLATFORM_SCREEN_PHOTOS } from "../photos";
 
 export function PlatformScreens() {
   const { m } = useI18n();
@@ -32,12 +33,13 @@ export function PlatformScreens() {
 
         <div className="lg:mx-auto lg:max-w-[84rem] lg:px-12">
           <CarouselContent className="mt-5 ml-0">
-            {m.platform.screens.map((slide) => (
+            {m.platform.screens.map((slide, index) => (
               <CarouselItem
                 key={slide.caption}
                 className="basis-full pl-0 pr-0 sm:basis-[42%] sm:pr-3 lg:basis-[30%] last:pr-0"
               >
                 <PhotoFrame
+                  src={PLATFORM_SCREEN_PHOTOS[index] ?? PLATFORM_SCREEN_PHOTOS[0]}
                   caption={slide.caption}
                   hint={slide.hint}
                   className="min-h-0 aspect-[16/10] rounded-none sm:rounded-xl lg:min-h-0"

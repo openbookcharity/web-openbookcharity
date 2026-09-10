@@ -1,16 +1,23 @@
+import { Container } from "@/shared/components/Container";
 import { PageLayout } from "@/shared/components/PageLayout";
-import { CommunityHero } from "../components/CommunityHero";
-import { CommunityRoles } from "../components/CommunityRoles";
-import { CommunityWays } from "../components/CommunityWays";
-import { CommunityCta } from "../components/CommunityCta";
+import { CommunityDirectory } from "../components/CommunityDirectory";
+import { CommunityForum } from "../components/CommunityForum";
+import { CommunityGroups } from "../components/CommunityGroups";
+import { CommunityVolunteer } from "../components/CommunityVolunteer";
 
 export function CommunityPage() {
   return (
     <PageLayout>
-      <CommunityHero />
-      <CommunityRoles />
-      <CommunityWays />
-      <CommunityCta />
+      <CommunityVolunteer />
+      <section className="flex-1 border-t border-border bg-muted py-6 sm:py-8">
+        <Container className="space-y-8">
+          <CommunityGroups />
+          <div className="grid gap-8 lg:grid-cols-2">
+            <CommunityDirectory />
+            <CommunityForum />
+          </div>
+        </Container>
+      </section>
     </PageLayout>
   );
 }

@@ -5,6 +5,7 @@ import { useTranslatedStories } from "@/shared/i18n/useTranslatedStories";
 import { HomeProvider } from "../context/HomeContext";
 import { HomeHero } from "../components/HomeHero";
 import { StatsStrip } from "../components/StatsStrip";
+import { HomePrograms } from "../components/HomePrograms";
 import { FeatureGrid } from "../components/FeatureGrid";
 import { HomeGallery } from "../components/HomeGallery";
 import { ProjectsGrid } from "../components/ProjectsGrid";
@@ -20,6 +21,7 @@ export function HomePage() {
       <PageLayout>
         <HomeHero />
         <StatsStrip />
+        <HomePrograms />
         <FeatureGrid />
         <HomeGallery />
         <ProjectsGrid />

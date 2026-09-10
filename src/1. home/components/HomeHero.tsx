@@ -10,7 +10,7 @@ export function HomeHero() {
   const { hero } = HOME_SETTINGS;
 
   return (
-    <section className="bg-hero-wash pb-5 pt-5 sm:pb-16 sm:pt-14 lg:pb-24">
+    <section className="bg-background pb-5 pt-5 sm:pb-16 sm:pt-14 lg:pb-24">
       <Container className="grid min-w-0 items-center gap-10 md:grid-cols-[1.05fr_1fr] md:gap-12 lg:gap-16">
         <div className="min-w-0">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-eyebrow text-accent-foreground">
@@ -32,10 +32,10 @@ export function HomeHero() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <CtaButton to="/partner" size="lg">
-              {m.common.raiseFunds}
+            <CtaButton to="/program" size="lg">
+              {m.common.donateNow}
             </CtaButton>
-            <CtaButton to="/platform" size="lg" variant="outline">
+            <CtaButton to="/program" size="lg" variant="outline">
               {m.common.seePlatform}
             </CtaButton>
           </div>
@@ -58,7 +58,11 @@ export function HomeHero() {
                 ))}
               </span>
               <span>
-                <strong className="text-navy">{hero.rating.score}</strong> {m.home.reviewsFrom}{" "}
+                <strong className="text-navy">
+                  {hero.rating.score}
+                  {m.home.reviewsScoreMax}
+                </strong>{" "}
+                {m.home.reviewsFrom}{" "}
                 <strong className="text-navy">
                   {hero.rating.reviews.toLocaleString(locale)}+
                 </strong>{" "}

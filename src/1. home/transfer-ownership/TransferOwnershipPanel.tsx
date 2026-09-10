@@ -1,4 +1,3 @@
-import { ShieldCheck } from "lucide-react";
 import { Container } from "@/shared/components/Container";
 import { SectionHeading } from "@/shared/components/SectionHeading";
 import { ctaVariants } from "@/shared/components/CtaButton";
@@ -19,10 +18,6 @@ export function TransferOwnershipPanel() {
               title={m.home.transferTitle}
               description={m.home.transferDescription}
             />
-            <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
-              <ShieldCheck className="size-4 text-secondary" />
-              {m.home.transferNote}
-            </p>
           </div>
 
           <form

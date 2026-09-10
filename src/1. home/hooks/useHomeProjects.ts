@@ -4,7 +4,7 @@ import type { HomeProject } from "../utils/projectMetrics";
 const PROJECTS: HomeProject[] = [
   {
     id: "dimas-harapan",
-    title: "Harapan baru untuk Dimas",
+    title: "Harapan Baru untuk Dimas",
     location: "Yogyakarta, DIY",
     raised: 32_850_000,
     goal: 45_000_000,
@@ -12,7 +12,7 @@ const PROJECTS: HomeProject[] = [
   },
   {
     id: "nenek-sari-jagung",
-    title: "Bantu Nenek Sari memulai usaha jagung",
+    title: "Bantu Nenek Sari Memulai Usaha Jagung",
     location: "Magelang, Jawa Tengah",
     raised: 21_300_000,
     goal: 30_000_000,
@@ -20,7 +20,7 @@ const PROJECTS: HomeProject[] = [
   },
   {
     id: "sd-air-bersih",
-    title: "Air bersih untuk SD Oebelo",
+    title: "Fasilitas Air Bersih untuk Siswa SD Oebelo",
     location: "Kupang, Nusa Tenggara Timur",
     raised: 84_000_000,
     goal: 120_000_000,

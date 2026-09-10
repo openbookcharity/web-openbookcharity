@@ -10,15 +10,12 @@ export function PlatformCta() {
       <Container>
         <div className="max-w-3xl">
           <h2 className="text-3xl tracking-tight text-navy sm:text-4xl">{m.platform.ctaTitle}</h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {m.platform.ctaBody}
-          </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CtaButton to="/partner" size="lg">
-              {m.common.raiseFunds}
+              {m.platform.heroRaiseFunds}
             </CtaButton>
             <CtaButton to="/" size="lg" variant="outline">
-              {m.common.seePrograms}
+              {m.platform.heroSeePrograms}
             </CtaButton>
           </div>
         </div>

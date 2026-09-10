@@ -2,12 +2,13 @@ import { Container } from "@/shared/components/Container";
 import { CtaButton } from "@/shared/components/CtaButton";
 import { PhotoFrame } from "@/shared/components/PhotoFrame";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { PLATFORM_HERO_PHOTO } from "../photos";
 
 export function PlatformHero() {
   const { m } = useI18n();
 
   return (
-    <section className="bg-hero-wash py-8 sm:py-20">
+    <section className="bg-background py-8 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
           <div>
@@ -20,15 +21,16 @@ export function PlatformHero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <CtaButton to="/partner" size="lg">
-                {m.common.raiseFunds}
+                {m.platform.heroRaiseFunds}
               </CtaButton>
               <CtaButton to="/" size="lg" variant="outline">
-                {m.common.seePrograms}
+                {m.platform.heroSeePrograms}
               </CtaButton>
             </div>
           </div>
 
           <PhotoFrame
+            src={PLATFORM_HERO_PHOTO}
             caption={m.platform.heroCaption}
             hint={m.platform.heroHint}
             className="min-h-[280px] lg:min-h-[380px]"

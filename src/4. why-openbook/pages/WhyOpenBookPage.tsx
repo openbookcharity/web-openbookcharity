@@ -23,6 +23,7 @@ export function WhyOpenBookPage() {
       <WhyGallery />
       <WhyAudience />
       <StoryHighlight
+        className="bg-muted py-8 sm:py-20"
         eyebrow={m.home.storiesEyebrow}
         title={m.why.storiesTitle}
         description={m.why.storiesDescription}

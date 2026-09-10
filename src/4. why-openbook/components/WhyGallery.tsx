@@ -8,12 +8,13 @@ import {
 } from "@/components/ui/carousel";
 import { PhotoFrame } from "@/shared/components/PhotoFrame";
 import { useI18n } from "@/shared/i18n/LanguageProvider";
+import { WHY_GALLERY_PHOTOS } from "../photos";
 
 export function WhyGallery() {
   const { m } = useI18n();
 
   return (
-    <section className="border-t border-border bg-secondary/8 py-6 sm:py-12">
+    <section className="bg-muted py-6 sm:py-12">
       <Carousel opts={{ align: "start", loop: false }} className="w-full max-w-full overflow-x-clip">
         <Container>
           <div className="flex items-end justify-between gap-4">
@@ -32,12 +33,13 @@ export function WhyGallery() {
 
         <div className="lg:mx-auto lg:max-w-[84rem] lg:px-12">
           <CarouselContent className="mt-5 ml-0">
-            {m.why.gallerySlides.map((slide) => (
+            {m.why.gallerySlides.map((slide, index) => (
               <CarouselItem
                 key={slide.caption}
                 className="basis-full pl-0 pr-0 sm:basis-[42%] sm:pr-3 lg:basis-[30%] last:pr-0"
               >
                 <PhotoFrame
+                  src={WHY_GALLERY_PHOTOS[index] ?? WHY_GALLERY_PHOTOS[0]}
                   caption={slide.caption}
                   hint={slide.hint}
                   className="min-h-0 aspect-[16/10] rounded-none sm:rounded-xl lg:min-h-0"

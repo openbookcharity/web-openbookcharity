@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PartnerPage } from "@/5. partner/pages/PartnerPage";
 
-const title = "Galang dana | OpenBook Charity";
+const title = "Galang Dana | OpenBook Charity";
 const description =
   "Bawa program nirlaba Anda ke OpenBook Charity dan laporkan dampak kepada donatur dalam hitungan hari, bukan berbulan-bulan.";
 
