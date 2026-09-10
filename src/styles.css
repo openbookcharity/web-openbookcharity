@@ -183,3 +183,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+@utility mindmap-scroll {
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}

@@ -5,6 +5,11 @@ import { cn } from "@/lib/utils";
 
 const STROKE = 3;
 const ARROW_MARKER = "url(#mindmap-arrow-gray)";
+const DIAGRAM_PAIR_GRID =
+  "mx-auto grid w-full max-sm:w-[30rem] grid-cols-2 items-stretch gap-2 sm:gap-6 lg:gap-10";
+const DIAGRAM_SIDE_CELL = "flex min-w-0 flex-col";
+const DIAGRAM_SIDE_CARD =
+  "h-full w-full min-w-0 max-w-none max-sm:min-h-[14rem] max-sm:max-w-[14.75rem] max-sm:justify-self-center";
 
 function MindmapStemDown({ tall }: { tall?: boolean }) {
   const h = tall ? 40 : 32;
@@ -170,6 +175,7 @@ function MindmapNode({
   badge,
   footer,
   logo,
+  compact,
   variant = "default",
   children,
   className,
@@ -180,6 +186,7 @@ function MindmapNode({
   badge?: string;
   footer?: string;
   logo?: "openbook" | "unknown";
+  compact?: boolean;
   variant?: "default" | "question" | "visible" | "hidden" | "reality" | "openbook";
   children?: ReactNode;
   className?: string;
@@ -188,6 +195,7 @@ function MindmapNode({
     <article
       className={cn(
         "relative flex h-full w-full max-w-xs flex-col rounded-2xl border px-3 py-3 text-center sm:max-w-sm sm:p-4",
+        compact && "max-sm:rounded-xl max-sm:px-1.5 max-sm:py-1.5",
         variant === "question" && "border-accent/40 bg-accent/5",
         variant === "visible" && "border-accent/30 bg-card shadow-soft",
         variant === "hidden" && "border-dashed border-navy/25 bg-muted/80",
@@ -230,6 +238,7 @@ function MindmapNode({
         <p
           className={cn(
             "mt-3 inline-flex rounded-full px-3 py-1 text-xs font-semibold sm:text-sm",
+            compact && "max-sm:mt-2 max-sm:px-2.5 max-sm:py-0.5",
             variant === "visible" && "bg-accent/15 text-navy",
             variant === "hidden" && "border border-border bg-card text-muted-foreground",
             variant === "reality" && logo === "openbook" && "bg-card text-navy",
@@ -244,7 +253,10 @@ function MindmapNode({
       {footer !== undefined ? (
         <p
           aria-hidden={footer === ""}
-          className="mt-auto min-h-[2.75rem] pt-3 text-left text-xs leading-snug text-muted-foreground sm:min-h-[3rem] sm:text-sm"
+          className={cn(
+            "mt-auto min-h-[2.75rem] pt-3 text-left text-xs leading-snug text-muted-foreground sm:min-h-[3rem] sm:text-sm",
+            compact && "max-sm:min-h-0 max-sm:pt-2",
+          )}
         >
           {footer}
         </p>
@@ -267,6 +279,10 @@ function MindmapDiagramCanvas({
     if (!el) return;
 
     const centerHorizontally = () => {
+      if (!window.matchMedia("(max-width: 639px)").matches) {
+        el.scrollLeft = 0;
+        return;
+      }
       el.scrollLeft = Math.max(0, (el.scrollWidth - el.clientWidth) / 2);
     };
 
@@ -279,12 +295,11 @@ function MindmapDiagramCanvas({
     <div className="relative -mx-3 sm:mx-0">
       <div
         ref={scrollRef}
-        className="overflow-x-auto overflow-y-visible [-webkit-overflow-scrolling:touch] sm:overflow-visible"
-        style={{ touchAction: "pan-x" }}
+        className="mindmap-scroll overflow-x-scroll overscroll-x-contain sm:overflow-visible"
         role="img"
         aria-label={ariaLabel}
       >
-        <div className="mx-auto w-max min-w-[34rem] max-w-none px-3 pb-2 pt-1 sm:w-full sm:min-w-0 sm:px-0">
+        <div className="mx-auto w-max min-w-[30rem] max-w-none px-1.5 pb-2 pt-1 sm:w-full sm:min-w-0 sm:px-0">
           {children}
         </div>
       </div>
@@ -292,9 +307,17 @@ function MindmapDiagramCanvas({
   );
 }
 
-function MindmapLeaves({ items, muted }: { items: readonly string[]; muted?: boolean }) {
+function MindmapLeaves({
+  items,
+  muted,
+  compact,
+}: {
+  items: readonly string[];
+  muted?: boolean;
+  compact?: boolean;
+}) {
   return (
-    <ul className="mt-3 space-y-1.5 text-left">
+    <ul className={cn("mt-3 space-y-1.5 text-left", compact && "max-sm:mt-2 max-sm:space-y-1")}>
       {items.map((item) => (
         <li
           key={item}
@@ -366,30 +389,32 @@ export function WhyTransparencyLayers() {
               </defs>
             </svg>
 
-            <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-6 lg:gap-10">
-              <div className="flex min-w-0 flex-col sm:items-end">
+            <div className={DIAGRAM_PAIR_GRID}>
+              <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-end")}>
                 <MindmapNode
+                  compact
                   variant="visible"
                   title={layers.layersGatewayLabel}
                   subtitle={layers.layersGatewayNote}
                   badge={layers.layersExampleGateway}
                   footer=""
-                  className="w-full max-w-none sm:mr-4"
+                  className={cn(DIAGRAM_SIDE_CARD, "sm:mr-4")}
                 >
-                  <MindmapLeaves items={layers.layersGatewayItems} />
+                  <MindmapLeaves compact items={layers.layersGatewayItems} />
                 </MindmapNode>
               </div>
 
-              <div className="flex min-w-0 flex-col sm:items-start">
+              <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-start")}>
                 <MindmapNode
+                  compact
                   variant="hidden"
                   title={layers.layersMindmapHiddenHub}
                   subtitle={layers.layersMindmapHiddenSub}
                   badge={layers.layersExampleDirect}
                   footer={layers.layersDirectNote}
-                  className="w-full max-w-none sm:ml-4"
+                  className={cn(DIAGRAM_SIDE_CARD, "sm:ml-4")}
                 >
-                  <MindmapLeaves items={layers.layersDirectItems} muted />
+                  <MindmapLeaves compact items={layers.layersDirectItems} muted />
                 </MindmapNode>
               </div>
             </div>
@@ -398,11 +423,12 @@ export function WhyTransparencyLayers() {
 
             <div className="flex flex-col items-center">
               <MindmapNode
+                compact
                 variant="reality"
                 title={layers.layersMindmapRealityHub}
                 subtitle={layers.layersMindmapRealitySub}
                 badge={layers.layersExampleTotal}
-                className="w-full max-w-sm"
+                className="w-full max-w-[12.5rem] sm:max-w-sm"
               />
               <p className="mt-3 max-w-md text-center text-xs text-muted-foreground sm:text-sm">
                 {layers.layersExampleSummary}
@@ -417,25 +443,29 @@ export function WhyTransparencyLayers() {
 
             <MindmapForkDown />
 
-            <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-6 lg:mx-auto lg:max-w-3xl lg:gap-10">
-              <div className="flex min-w-0 flex-col sm:items-end">
+            <div className={cn(DIAGRAM_PAIR_GRID, "lg:max-w-3xl")}>
+              <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-end")}>
                 <MindmapNode
+                  compact
                   variant="visible"
                   logo="unknown"
                   title={layers.layersCompareOthersTitle}
                   subtitle={layers.layersCompareOthersSub}
                   badge={layers.layersCompareOthersBadge}
-                  className="w-full max-w-none sm:mr-4"
+                  footer=""
+                  className={cn(DIAGRAM_SIDE_CARD, "sm:mr-4")}
                 />
               </div>
-              <div className="flex min-w-0 flex-col sm:items-start">
+              <div className={cn(DIAGRAM_SIDE_CELL, "sm:items-start")}>
                 <MindmapNode
+                  compact
                   variant="reality"
                   logo="openbook"
                   title={layers.layersCompareOpenBookTitle}
                   subtitle={layers.layersCompareOpenBookSub}
                   badge={layers.layersCompareOpenBookBadge}
-                  className="w-full max-w-none sm:ml-4"
+                  footer=""
+                  className={cn(DIAGRAM_SIDE_CARD, "sm:ml-4")}
                 />
               </div>
             </div>
